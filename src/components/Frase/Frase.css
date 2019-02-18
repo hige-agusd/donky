@@ -1,0 +1,22 @@
+.Frase-wrapper {
+    align-items: center;
+    background-color: #16181d;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+.Frase {
+    color: #fff;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .Frase {
+        font-size: 2vh;
+    }
+}
+@media (min-width: 1024px) {
+    .Frase {
+        font-size: 3vh;
+    }
+}

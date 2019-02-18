@@ -1,0 +1,39 @@
+.Sponsors {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+.Sponsors > div {
+    justify-content: space-between;
+    width: 100%;
+}
+.Sponsors-Logo {
+    align-items: center;
+    display: flex;
+    height: 116px;
+}
+.Sponsors-Logo img {
+    width: 100%;
+}
+
+@media (min-width:768px) {
+    .Sponsors {
+        height: 170px;
+    }
+    .Sponsors > div {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .Sponsors-Logo {
+        align-items: center;
+        display: flex;
+        height: 116px;
+        text-align: center;
+    }
+    .Sponsors-Logo img {
+        margin: auto;
+        width: auto;
+    }
+}

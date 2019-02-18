@@ -1,0 +1,96 @@
+.StaffMembers-wrapper {
+    height: 100%;
+}
+.StaffMembers-header {
+    display: flex;
+    height: 25%;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    font-size: 3vh;
+}
+.slick-slider {
+    height: 75%;
+}
+.slick-list,
+.slick-track, 
+.slick-slide, 
+.slick-slide > div {
+    height: 100%;
+}
+.slick-slider .slick-arrow {
+    height: 51px;
+    top: 40%;
+}
+.slick-slider .slick-arrow::before {
+    content: url('../../assets/images/arrow.png');
+    background-blend-mode: multiply;
+}
+.slick-slider .slick-arrow.slick-prev {
+    left: 0;
+    transform: rotate(180deg) translateY(50%);
+}
+.slick-slider .slick-arrow.slick-next {
+    right: 0;
+}
+.StaffMember-wrapper {
+    display: inline-block;
+    height: 100%;
+}
+.slick-slide .StaffMember-image {
+    display: inline-block;
+}
+.StaffMember-name {
+    color: #f41497;
+    font-size: 2vh;
+    font-weight: bold;
+    margin-top: 3vh;
+}
+.StaffMember-job {
+    font-size: 1.5vh;
+}
+.StaffMember-bio {
+    font-size: 1.5vh;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 4vh;
+    width: 80%;
+}
+.StaffMember-btn {
+	background-image: linear-gradient( #f41497 0%, #6e034d 100%);
+	border-radius: 10px;
+    box-sizing: border-box;
+	color: #f41497;
+	display: block;
+	height: 60px;
+	letter-spacing: 1px;
+	margin: 0 auto;
+    margin-top: 3vh;
+	padding: 3px;
+	position: relative;
+    text-decoration: none;
+	text-transform: uppercase;
+	width: 190px;
+	z-index: 2;
+}
+
+.StaffMember-btn:hover {
+	color: #fff;
+    text-decoration: none;
+}
+
+.StaffMember-btn span {
+	align-items: center;
+	background: #fff;
+	border-radius: 8px;
+    display: flex;
+    font-size: 2.5vh;
+	justify-content: center;
+	height: 100%;
+	transition: background .5s ease;
+	width: 100%;
+}
+
+.StaffMember-btn:hover span {
+	background: transparent;
+}

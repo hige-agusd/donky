@@ -1,0 +1,60 @@
+.Sumate {
+    align-items: center;
+    background-color: #fff;
+    background-image: url('../../assets/images/donky.png');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 64%;
+    background-size: auto 140%;
+    color: #16181d;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    vertical-align: middle;
+}
+.Sumate-titulo {
+    display: block;
+    font-size: 20px;
+}
+.Sumate-subtitulo {
+    display: block;
+    font-size: 14px;
+}
+.Sumate-btn {
+    align-items: center;
+    background-image: linear-gradient( #f41497 0%, #6e034d 100%);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+    padding: 3px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: center;
+    z-index: 2;
+  }
+  .Sumate-btn:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .Sumate-contacto-btn {
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    /* margin-bottom: 19px; */
+    width: 120px;
+  }
+
+@media (min-width: 768px) {
+   .Sumate {
+     height: 300px;
+   }
+}
+@media (min-width: 1024px) {
+    
+}

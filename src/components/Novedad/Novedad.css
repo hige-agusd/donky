@@ -1,0 +1,92 @@
+.Novedad {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 100%;
+    text-decoration: none;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+.Novedad:hover {
+  background-color: #16181dcc;
+  background-blend-mode: overlay;
+  background-size: 115%;
+  -moz-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+.Novedad-overlay {
+  align-items: flex-end;
+  background-color: #16181d30;
+  display: none;
+  height: 100%;
+  padding: 0 0 20px 25px;
+  width: 100%;
+  z-index: 0;
+}
+.Novedad-content-wrapper {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 0 20px 25px;
+  width: 100%;
+  z-index: 10;
+}
+.Novedad-content-title {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.2;
+    text-transform: capitalize;
+    width: 100%;
+  }
+  .Novedad-content-subtitle {
+    color: #f41497;
+    display: block;
+    font-size: 12px;
+    width: 100%;
+  }
+  .Novedad-content-more {
+    height: 0;
+    margin-top: 2vw;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    width: 100%;
+  }
+  .Novedad:hover .Novedad-content-more {
+    height: 11vw;
+  }
+  .Novedad-content-description {
+    color: #fff;
+    font-size: 12px;
+  }
+  .Novedad-content-btn {
+    align-items: center;
+    background-color: #f41497;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    height: 2vw;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2vw;
+    text-transform: uppercase;
+    width: 8vw;
+    z-index: 129;
+}
+.Novedad-content-btn:hover,
+.Novedad-content-btn:active,
+.Novedad-content-btn.active {
+    color: #fff;
+    text-decoration: none;
+}

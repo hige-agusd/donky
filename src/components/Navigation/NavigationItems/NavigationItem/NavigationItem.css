@@ -1,0 +1,62 @@
+.NavigationItem {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+.NavigationItem a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+    color: #f41497;
+}
+
+@media (min-width: 500px) {
+    .NavigationItem {
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+        height: 100%;
+        margin: 0;
+        text-transform: uppercase;
+        width: auto;
+    }
+    
+    .NavigationItem a {
+        color: white;
+        /* height: 100%; */
+        padding: 12px 10px;
+    }
+        
+      
+    .NavigationItem a:hover,
+    .NavigationItem a:active,
+    .NavigationItem a.active {
+        color: #f41497;
+    }
+
+    .NavigationItem.btn a {
+        /* background: #f41497; */
+        border-radius: 2px;
+        background-image: -moz-linear-gradient( 90deg, rgb(110,3,77) 0%, rgb(238,25,150) 100%);
+        background-image: -webkit-linear-gradient( 90deg, rgb(110,3,77) 0%, rgb(238,25,150) 100%);
+        background-image: -ms-linear-gradient( 90deg, rgb(110,3,77) 0%, rgb(238,25,150) 100%);
+        background-image: linear-gradient(rgb(238,25,150) 0%, rgb(110,3,77) 100%);
+        width: 119px;
+        height: 43px;
+        z-index: 129;
+    }
+    .NavigationItem.btn a:hover,
+    .NavigationItem.btn a:active,
+    .NavigationItem.btn a.active {
+        color: #fff;
+    }
+}

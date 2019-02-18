@@ -1,0 +1,30 @@
+.DonkyLogo {
+    background-color: #16181d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vw;
+}
+.DonkyLogo-Logo {
+    display: inline-block;
+}
+.DonkyLogo-Logo img {
+    width: 70vw;
+}
+
+.SideDrawer .DonkyLogo {
+    height: 40vw;
+}
+
+.SideDrawer .DonkyLogo-Logo img {
+    width: 30vw;
+}
+
+@media (min-width:768px) {
+    .DonkyLogo {
+        height: 40vw;
+    }
+    .DonkyLogo-Logo img {
+        width: 30vw;
+    }
+}

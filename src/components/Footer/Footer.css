@@ -1,0 +1,77 @@
+.Footer {
+  color: #fff;
+  font-size: 10px;
+  height: 180px;
+  padding: 0;
+}
+.Footer-main-row {
+  align-items: center;
+  background-color: #16181d;
+  height: 140px;
+  justify-content: center;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+.Footer-second-row {
+  align-items: center;
+  background-color: #f41497;
+  height: 40px;
+  margin: 0;
+  padding-top: 5px;
+  width: 100%;
+}
+.Footer-logo {
+  background-image: url('../../assets/images/Donky_logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+  height: 80px;
+}
+.Footer-contacto {
+  float: right;
+  margin-top: 5px;
+  padding-left: 0;
+}
+.Footer-social {
+  float: right;
+  margin-top: 5px;
+  padding-left: 0;
+}
+.Footer-social-icons {
+  color: #f41497;
+}
+.Footer-social-icons svg {
+  margin-left: 15px;
+}
+.Footer-social-icons .outline {
+  color: transparent;
+}
+.Footer-social-icons .fa-facebook-f path {
+  stroke: #f41497;
+  stroke-width: 40;
+}
+
+@media (min-width: 768px) {
+  .Footer {
+    height: 260px;
+  }
+  .Footer-main-row {
+    display: flex;
+    font-size: 14px;
+    height: 220px;
+  }
+  .Footer-logo {
+    height: 150px;
+  }
+  .Footer-second-row {
+    display: flex;
+    font-size: 12px;
+    height: 40px;
+  }
+}
+@media (min-width: 1024px) {
+    
+}
