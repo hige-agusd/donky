@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './containers/Home/Home';
-import test from './containers/test/test';
+import Torneo from './containers/Torneo/Torneo';
 import Layout from './hoc/Layout/Layout';
 import './assets/fonts/Donky_Fuente.ttf';
 import './App.css';
@@ -14,7 +14,7 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/test" component={test} />
+            <Route path="/fixture" component={Torneo} />
           </Switch>
         </Layout>
       </div>

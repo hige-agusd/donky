@@ -8,12 +8,13 @@
 .Links-row {
     display: inline-block;
     height: 100%;
-    margin: 0 -15px;
+    margin: 0;
     width: 100%;
 }
 .Links-col {
     height: 340px;
     padding: 0;
+    display: inline-block;
 }
 .Links-Link {
     background-position: center;

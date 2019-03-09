@@ -8,18 +8,20 @@ import thunk from 'redux-thunk';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
-
-
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-library.add(faInstagram, faFacebookF);
+import torneos from './store/reducers/torneos';
+import equipos from './store/reducers/equipos';
 
+library.add(faInstagram, faFacebookF);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
+    torneos: torneos,
+    equipos: equipos
 });
 
 const store = createStore(rootReducer, composeEnhancers(
