@@ -40,7 +40,7 @@
   margin-top: 5px;
   padding-left: 0;
 }
-.Footer-social-icons {
+.Footer-social-icons a {
   color: #f41497;
 }
 .Footer-social-icons svg {

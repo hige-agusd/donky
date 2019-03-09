@@ -18,8 +18,8 @@ const footer = props => (
             <Col className={'Footer-social col-xs-6'} xs={{order: 3}}  md={3}>
                 <div className={'Footer-social-title'} >Seguinos en:</div>
                 <div className={'Footer-social-icons'}>
-                    <FontAwesomeIcon icon={['fab', 'instagram']} />
-                    <FontAwesomeIcon className={'outline'} icon={['fab', 'facebook-f']} />
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com/donkyfutbol/"><FontAwesomeIcon icon={['fab', 'instagram']} /></a>
+                    <a target="_blank" rel="noopener" href="https://www.facebook.com/donkyfutbol/"><FontAwesomeIcon className={'outline'} icon={['fab', 'facebook-f']} /></a>
                 </div>
             </Col>
         </Row>

@@ -1,20 +1,21 @@
 .Links-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1020px;
+    height: 360;
+    overflow: hidden;
     padding: 0;
+    width: 100%;
 }
 .Links-row {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin: 0;
     width: 100%;
 }
 .Links-col {
-    height: 340px;
+    height: 120px;
     padding: 0;
     display: inline-block;
+    width: 100%;
 }
 .Links-Link {
     background-position: center;
@@ -47,10 +48,10 @@
 }
 .Links-overlay {
     background-color: #16181d30;
-    height: 100%;
+    height: auto;
     position: relative;
     display: block;
-    width: auto;
+    width: 100%;
     z-index: -1;
 }
 .Links-Link:hover .Links-overlay {
@@ -77,9 +78,21 @@
     .Links-section {
         height: 280px;
     }
+    .Links-row {
+        flex-direction: row;
+    }
     .Links-col {
         height: 280px;
     }
+    .Links-overlay {
+        height: 100%;
+        width: auto;
+    }
 }
   
+@media (min-width:1615px) {
+    .Links-overlay {
+        width: 100%;
+    }
+}
 

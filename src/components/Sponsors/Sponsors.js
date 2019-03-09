@@ -10,17 +10,14 @@ import './Sponsors.css';
 const sponsors = props => (
     <Container fluid={true} className={'Sponsors'}>
       <Row>
-      <Col className={"Sponsors-Logo col-xs-6"} md={3} style={{ height: props.height }}>
-        <img src={birmutLogo} alt="MyBurger" />
+      <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>
+        <img src={birmutLogo} alt="Birmut Cervecería" />
       </Col>
-      <Col className={"Sponsors-Logo col-xs-6"} md={3} style={{ height: props.height }}>
-        <img src={warlordLogo} alt="MyBurger" />
+      <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>
+        <img src={warlordLogo} alt="Warlord Creations" />
       </Col>
-      <Col className={"Sponsors-Logo col-xs-6"} md={3} style={{ height: props.height }}>
-        <img src={mahauxLogo} alt="MyBurger" />
-      </Col>
-      <Col className={"Sponsors-Logo col-xs-6"} md={3} style={{ height: props.height }}>
-        <img src={heroFactoryLogo} alt="MyBurger" />
+      <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>
+        <img src={heroFactoryLogo} alt="J&T Hero Factory" />
       </Col>
     </Row>
   </Container>
