@@ -21,8 +21,8 @@ class Home extends Component {
             <Sponsors />
             <DonkyLogo />
             <Links />
-            <Novedades />
-            <Staff />
+            {/* <Novedades />
+            <Staff /> */}
             <Frase frase={frase} />
             <Galeria />
             <Sumate />

@@ -4,7 +4,7 @@
     display: block;
     width: 100%;
 }
-
+a.btn,
 .NavigationItem a {
     color: #fff;
     text-decoration: none;
@@ -13,6 +13,9 @@
     display: block;
 }
 
+a.btn:hover,
+a.btn:active,
+a.btn.active,
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
@@ -57,6 +60,22 @@
     .NavigationItem.btn a:hover,
     .NavigationItem.btn a:active,
     .NavigationItem.btn a.active {
+        color: #fff;
+    }
+    a.btn {
+        /* background: #f41497; */
+        border-radius: 12px;
+        background: #f41497;
+        color: #fff;
+        width: 119px;
+        height: 30px;
+        padding: 4px;
+        text-transform: uppercase;
+        z-index: 129;
+    }
+    a:hover.btn ,
+    a:active.btn ,
+    a.active.btn {
         color: #fff;
     }
 }
