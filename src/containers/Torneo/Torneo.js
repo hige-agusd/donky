@@ -40,8 +40,8 @@ class Torneo extends Component {
                             /> )}
                     {categoria.tabla ? <><SectionHeader titulo={'Tabla de Posiciones'} clase={'Posiciones'} />
                     <Posiciones key={i} posiciones={categoria.tabla} /> </> : null }
-                    {/* <SectionHeader titulo={'Equipos'} clase={'Equipos'} />
-                        <Equipos equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} />  */}
+                    <SectionHeader titulo={'Equipos'} clase={'Equipos'} />
+                        <Equipos equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} />
                 </React.Fragment>
             ) 
             : <Spinner />;

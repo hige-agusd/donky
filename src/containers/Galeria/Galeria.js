@@ -25,7 +25,7 @@ class Novedades extends Component {
           <Row className={'Galeria-header'}>
             <h3 className={'Galeria-titulo'}>GALERIA</h3> 
             <h6 className={'Galeria-subtitulo'}>DONKY FUTBOL</h6>
-            {/* <NavLink to={'/galeria'} className={'Galeria-btn Galeria-ver-fotos-btn'} >Ver Fotos</NavLink> */}
+            <NavLink to={'/galeria'} className={'Galeria-btn Galeria-ver-fotos-btn'} >Ver Fotos</NavLink>
           </Row>
           <Row className={'Galeria-row'}>
             <Slider {...settings}>
