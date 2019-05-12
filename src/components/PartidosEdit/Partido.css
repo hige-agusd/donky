@@ -1,0 +1,107 @@
+.Partido-wrapper {
+    align-items: center;
+    background-color: #dfdede;
+    border: 1px solid #b4b4b4;
+    color: #d0cece;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+/* import donkyLogo from "../../assets/images/Donky_logo.png"; */
+
+.Partido {
+    align-self: center;
+    color: #717171;
+    font-size: 12px;
+    justify-self: stretch;
+    margin-left: -210px;
+    width: 100%;
+}
+/* .Partido-wrapper:nth-of-type(odd) {
+    background-color: #f6f6f6;
+} */
+.Partido-wrapper.odd {
+    background-color: #f6f6f6;
+}
+.Partido * {
+    font-family: Arial, Helvetica, sans-serif!important;
+    font-weight: 200;
+}
+.Partido-VS {
+    font-size: 150px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+.Partido-eq-local, 
+.Partido-eq-visitante {
+    margin-top: 12px;
+}
+.Partido-escudo-wrapper {
+    background: #ececec;
+    border-radius: 50%; 
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+.Partido-escudo-wrapper img {
+    display: inline-block;
+    height: 30px;
+    margin-top: 7px;
+    width: 30px;
+}
+.Partido-goles {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.Partido-goles-edit input {
+    margin-top: 10px;
+    width: 30px;
+}
+.Partido-header {
+    background: #f6f6f6;
+    color: #717171;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .Frase {
+        font-size: 2vh;
+    }
+    .Partido-goles-edit input {
+        margin-top: 10px;
+        width: 60px;
+    }
+}
+@media (min-width: 1024px) {
+    .Partido-wrapper {
+        height: 100px;
+    }
+    .Partido {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        font-size: 30px;
+        margin-left: -400px;
+    }
+      
+    .Partido * {
+        font-weight: 200;
+        font-size: 30px;
+    }
+    .Partido-VS {
+        font-size: 300px;
+    }
+    .Partido-escudo-wrapper {
+        height: 80px;
+        width: 80px;
+    }
+    .Partido-escudo-wrapper img {
+        height: 65px;
+        margin-top: 12px;
+        width: 65px;
+    }
+}

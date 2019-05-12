@@ -1,0 +1,32 @@
+.Torneo {
+    background-color: #16181d;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.Torneo .slick-slider {
+    height: 75%;
+    width: 100%;
+}
+.Torneo .slick-list,
+.Torneo .slick-track, 
+.Torneo .slick-slide, 
+.Torneo .slick-slide > div {
+    height: 100%;
+    width: 100%;
+}
+.Torneo .slick-slider .slick-arrow {
+    display: none;
+}
+.Torneo .slick-slider .slick-arrow::before {
+    content: url('../../assets/images/arrow.png');
+    background-blend-mode: multiply;
+}
+.Torneo .slick-slider .slick-arrow.slick-prev {
+    left: 0;
+    transform: rotate(180deg) translateY(50%);
+}
+.Torneo .slick-slider .slick-arrow.slick-next {
+    right: 0;
+}

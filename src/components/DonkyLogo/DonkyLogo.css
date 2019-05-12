@@ -1,7 +1,7 @@
 .DonkyLogo {
     background-color: #16181d;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100vw;
 }

@@ -9,7 +9,6 @@ import Staff from '../Staff/Staff';
 import Frase from '../../components/Frase/Frase';
 import Galeria from '../Galeria/Galeria';
 import Sumate from '../../components/Sumate/Sumate';
-import Footer from '../../components/Footer/Footer';
 
 //<img src={logo} className="App-logo" alt="logo" />
 
@@ -27,7 +26,6 @@ class Home extends Component {
             <Frase frase={frase} />
             <Galeria />
             <Sumate />
-            <Footer />
         </Container>);
     }
 

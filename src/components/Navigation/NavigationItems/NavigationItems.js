@@ -7,9 +7,10 @@ const navigationItems = () => (
     <ul className={'NavigationItems'}>
         <NavigationItem link="/" exact> Inicio</NavigationItem>
         <NavigationItem link="/academia">Academia</NavigationItem>
-        <NavigationItem link="/torneos">Torneos</NavigationItem>
+        <NavigationItem link="/fixture">Torneos</NavigationItem>
         <NavigationItem link="/beneficios">Beneficios</NavigationItem>
-        <NavigationItem link="/contacto" class={'btn'}>Contacto</NavigationItem>
+        <a href="#footer" className={'btn'}>Contacto</a>
+        {/* <NavigationItem link="#footer" class={'btn'}>Contacto</NavigationItem> */}
     </ul>
 );
 

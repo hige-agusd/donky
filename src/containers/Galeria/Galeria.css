@@ -49,6 +49,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.Galeria-section .slick-slider .slick-track {
+  width: 10vw;
+}
 .Galeria-section .slick-slider {
   height: 100%;
 }
@@ -62,6 +66,10 @@
 }
 .Galeria-section .slick-slider .slick-arrow.slick-next {
   right: 30px;
+}
+
+.Galeria-section .slick-slide {
+  width: 33%;
 }
 .Galeria-section .slick-slide > div {
   /* height: 95%; */

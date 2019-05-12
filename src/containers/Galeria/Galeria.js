@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import img1 from "../../assets/images/galeria_1.png";
 import img2 from "../../assets/images/galeria_2.png";
 import img3 from "../../assets/images/galeria_3.png";
-import img4 from "../../assets/images/amistoso.png";
+// import img4 from "../../assets/images/amistoso.png";
 import { Container, Row } from "react-bootstrap";
 import Slider from 'react-slick';
 import './Galeria.css';
@@ -19,7 +19,7 @@ class Novedades extends Component {
         slidesToShow: 3,
         slidesToScroll: 1
       };
-      const imagenes = [img1, img2, img3, img4];
+      const imagenes = [img1, img2, img3, img1, img2, img3];
       return (
         <Container fluid={true} className={'Galeria-section'}>
           <Row className={'Galeria-header'}>
