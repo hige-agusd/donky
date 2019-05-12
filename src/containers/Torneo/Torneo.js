@@ -33,18 +33,15 @@ class Torneo extends Component {
             (categoria, i) => 
                 <React.Fragment key={'cat'+i}>
                     <SectionHeader titulo={'Fixture'} clase={'Fixture'} prev={() => this.prevSlide()} next={() => this.nextSlide()}
-                        torneo={`Torneo ${this.props.torneo.nombre}`} categoria={`Categoria ${categoria.nombre}`} />
+                        torneo={`Torneo ${this.props.torneo.nombre}`} categoria={`${categoria.nombre}`} />
                     {categoria.fechas.map((fecha, i) => 
                         <Fechas num={i+1} key={i} 
                             fecha={fecha} 
-                            equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} 
                             /> )}
-                    <SectionHeader titulo={'Tabla de Posiciones'} clase={'Posiciones'} />
-                    <Posiciones key={i} posiciones={categoria.tabla} 
-                            equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} 
-                            />
+                    {categoria.tabla ? <><SectionHeader titulo={'Tabla de Posiciones'} clase={'Posiciones'} />
+                    <Posiciones key={i} posiciones={categoria.tabla} /> </> : null }
                     <SectionHeader titulo={'Equipos'} clase={'Equipos'} />
-                        <Equipos equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} /> 
+                        <Equipos equipos={this.props.equipos.filter(equipo => equipo.categoria === categoria.nombre)} />
                 </React.Fragment>
             ) 
             : <Spinner />;

@@ -4,12 +4,12 @@ import './Posiciones.css';
 import Spinner from "../UI/Spinner/Spinner";
 
 const posiciones = props =>{
-    const images = require.context('../../assets/images', true);
-    const escudos = props.equipos.map(eq => ({
-        nombre: eq.nombre, escudo: images('./'+eq.escudo)
-    }));
+    // const images = require.context('../../assets/images', true);
+    // const escudos = props.equipos.map(eq => ({
+    //     nombre: eq.nombre, escudo: images('./'+eq.escudo)
+    // }));
     return (
-        props.equipos.length > 0 ? 
+        props.posiciones.length > 0 ? 
     <Container fluid={true} className={"Tabla-wrapper"} >
         <Row className={'Tabla-Header'}>
             <Col md={1} className={'Tabla-col col-xs-2 '}>POS.</Col>
@@ -27,10 +27,10 @@ const posiciones = props =>{
             <Row key={pos} className={`Tabla-Row ${pos%2===0?'':'even'}`}>
                 <Col md={1} className={'Tabla-col col-xs-2 Tabla-pos-value'}>{pos + 1}</Col>
                 <Col md={3} className={'Tabla-col col-xs-4 Tabla-equipo'}>
-                    <div className={'Tabla-escudo-wrapper'}>
+                    {/* <div className={'Tabla-escudo-wrapper'}>
                         <img src={escudos.find(esc => 
                             esc.nombre === equipo.nombre).escudo} alt={equipo.nombre}></img>
-                    </div>
+                    </div> */}
                     <div className={'Tabla-equipo-nombre'}>{equipo.nombre}</div>
                 </Col>
                 <Col className={'Tabla-col col-xs-1 '}>{equipo.pj}</Col>

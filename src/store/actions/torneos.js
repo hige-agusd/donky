@@ -23,7 +23,7 @@ export const fetchTorneoFailed = () => {
 
 export const initTorneo = () => {
     return dispatch => {
-        axios.get( 'https://donky-dd35a.firebaseio.com/torneos.json' )
+        axios.get( '/torneos.json' )
             .then( response => {
                dispatch(setTorneo(response.data));
             } )

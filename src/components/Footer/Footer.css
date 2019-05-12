@@ -17,6 +17,9 @@
 .Footer-second-row {
   align-items: center;
   background-color: #f41497;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   height: 40px;
   margin: 0;
   padding-top: 5px;
@@ -34,6 +37,19 @@
   float: right;
   margin-top: 5px;
   padding-left: 0;
+}
+.Footer-tel-link {
+  color: #fff;
+  text-decoration: none;
+}
+.Footer-tel-link:hover,
+.Footer-tel-link:active,
+.Footer-tel-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+.Footer-tel {
+  display: none;
 }
 .Footer-social {
   float: right;
@@ -70,6 +86,12 @@
     display: flex;
     font-size: 12px;
     height: 40px;
+  }
+  .Footer-tel-link {
+    display: none;
+  }
+  .Footer-tel {
+    display: block;
   }
 }
 @media (min-width: 1024px) {
