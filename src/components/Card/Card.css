@@ -1,4 +1,4 @@
-.Equipos-wrapper {
+.Cards-wrapper {
     align-items: center;
     background-color: #f6f6f6;
     border: 1px solid #b4b4b4;
@@ -10,19 +10,27 @@
     padding: 0;
     width: 100%;
 }
-.Equipos-row {
+.react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content {
+    box-shadow: none;
+}
+.Cards-row {
     display: flex;
     flex-direction: column;
 }
-.Equipo {
+.Card {
     align-items: center;
     align-self: center;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
+    height: 220px;
+    width: 180px;
 }
-.Equipo-escudo {
+.Card-escudo {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,22 +39,24 @@
     width: 80px;
     z-index: 10;;
 }
-.Equipo-imagen {
+.Card-imagen {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 15px;
-    height: 240px;
-    margin-bottom: 20px;
-    width: 240px;
+    height: 180px;
+    /* margin-bottom: 20px; */
+    width: 180px;
 }
-
-.react-3d-carousel {
-    width: 100%;
-    margin-bottom: 20px;
+.Card-name {
+    color: #fff;
+    margin-top: -35px;
 }
 
 @media (min-width: 768px) {
 }
 @media (min-width: 1024px) {
-    .Equipos-row {
+    .Cards-row {
         flex-direction: row;
         justify-content: space-evenly;
         width: 100%;

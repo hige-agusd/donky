@@ -2,7 +2,7 @@ import React from "react";
 
 import birmutLogo from "../../assets/images/Birmut.png";
 import warlordLogo from "../../assets/images/Warlord.png";
-import mahauxLogo from "../../assets/images/MAHAUX.png";
+// import mahauxLogo from "../../assets/images/MAHAUX.png";
 import heroFactoryLogo from "../../assets/images/Hero_Factory.png";
 import { Container, Row, Col } from "react-bootstrap";
 import './Sponsors.css';

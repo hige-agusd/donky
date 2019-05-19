@@ -30,6 +30,60 @@ html, body {
   color: #61dafb;
 }
 
+.react-3d-carousel .slider-container .slider-content .slider-single.preactive .slider-single-content {
+  opacity: .3;
+  transform: translateX(-45%) scale(0.5);
+}
+.react-3d-carousel .slider-container .slider-content .slider-single.proactive .slider-single-content {
+  opacity: .3;
+  transform: translateX(45%) scale(0.5);
+}
+.react-3d-carousel .slider-container .slider-left,
+.react-3d-carousel .slider-container .slider-right {
+  position: absolute;
+  display: none;
+  z-index: 3;
+  padding: 20px 15px;
+  height: 125%;
+  cursor: pointer;
+  margin: 0;
+}
+.react-3d-carousel .slider-container .slider-left > div,
+.react-3d-carousel .slider-container .slider-right > div {
+  border: none;
+}
+.react-3d-carousel .slider-container .slider-left {
+  left: -33%;
+}
+.react-3d-carousel .slider-container .slider-right {
+  left: 105%;
+  right: -25%;
+}
+.react-3d-carousel .slider-container .slider-right .fa.fa-arrow-right:before,
+.react-3d-carousel .slider-container .slider-left .fa.fa-arrow-left:before {
+  background: transparent;
+  content: '';
+	display: inline-block;
+  margin-top: 1.05em;
+  margin-left: 0.6em;
+  width: 24px;
+  height: 24px;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  border-color: #3c3c3c;
+}
+.react-3d-carousel .slider-container .slider-left .fa.fa-arrow-left:before {
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.react-3d-carousel .slider-container .slider-right .fa.fa-arrow-right:before {
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
