@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: space-around;
     overflow: hidden;
-    padding: 0;
+    padding: 50px 0 35px 0;
     width: 100%;
 }
 .Equipos-row {
@@ -38,12 +38,23 @@
     width: 240px;
 }
 
-.react-3d-carousel {
+.Equipos-wrapper .react-3d-carousel {
     width: 100%;
-    margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
+    .Equipos-wrapper .react-3d-carousel {
+        /* transform: translateY(-40%); */
+        height: 100%!important;
+        width: 70%;
+    }
+    .Equipos-wrapper {
+        height: 500px;
+    }
+    .Equipos-wrapper .Card {
+        height: 400px;
+        width: 400px;
+    }
 }
 @media (min-width: 1024px) {
     .Equipos-row {

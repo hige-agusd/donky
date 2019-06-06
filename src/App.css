@@ -83,12 +83,13 @@ html, body {
   transform: rotate(45deg);
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px) {
+  .react-3d-carousel .slider-container .slider-left {
+    left: -25%;
   }
-  to {
-    transform: rotate(360deg);
+  .react-3d-carousel .slider-container .slider-right {
+    left: 114%;
   }
+}
+@media (min-width: 1024px) {
 }
