@@ -9,7 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 import './index.css';
-import App from './App';
+import App from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
 
 import torneos from './store/reducers/torneos';

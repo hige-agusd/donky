@@ -1,0 +1,60 @@
+.FichaJugador {
+    align-content: center;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px;
+    width: 100%;
+}
+
+.FichaJugador-foto {
+    margin-bottom: 45px;
+}
+.FichaJugador-dato {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    justify-content: space-evenly;
+    padding: 0 25px;
+}
+.App .FichaJugador-dato * {
+    font-family: 'Helvetica', sans-serif;
+}
+.FichaJugador-dato-etiqueta {
+    color: #c3c3c3;
+    text-align: left;
+    text-transform: lowercase;
+}
+.FichaJugador-dato-valor {
+    color: #999;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    .FichaJugador {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-right: 10px;
+        padding: 35px 15px;
+        width: 50%;
+    }
+    .FichaJugador-foto .Card {
+        height: 250px;
+        width: 200px;
+    }
+    .FichaJugador-foto .Card .Card-escudo {
+        height: 80px;
+        margin-bottom: -40px;
+        width: 80px;
+    }
+    .FichaJugador-datos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

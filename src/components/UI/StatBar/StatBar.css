@@ -1,0 +1,39 @@
+.StatBar-skill-level {
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+.App .StatBar-skill-level * {
+    color: #969696;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+.StatBar-skill {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.StatBar-level {
+    text-align: left;
+    width: 55px;
+}
+.StatBar-background {
+    background-color: #ddd!important;
+    border-radius: 6px;
+    color: #000!important;
+    height: 6px;
+    line-height: 10px;
+    width: 100%;
+}
+
+.StatBar-percentage {
+    background-color: #31cc26!important;
+    border-radius: 6px;
+    color: #fff!important;
+    height: 12px;
+    margin-top: -3px;
+    text-align: center!important;
+}

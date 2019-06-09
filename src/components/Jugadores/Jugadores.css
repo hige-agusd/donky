@@ -1,0 +1,64 @@
+.Jugadores-wrapper {
+    align-items: center;
+    background-color: #f6f6f6;
+    border: 1px solid #b4b4b4;
+    color: #d0cece;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 50px 0 35px 0;
+    width: 100%;
+}
+.Jugadores-row {
+    display: flex;
+    flex-direction: column;
+}
+.Jugador {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0;
+}
+.Jugador-escudo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80px;
+    margin-bottom: -40px;
+    width: 80px;
+    z-index: 10;
+}
+.Jugador-imagen {
+    border-radius: 15px;
+    height: 240px;
+    margin-bottom: 20px;
+    width: 240px;
+}
+
+.Jugadores-wrapper .react-3d-carousel {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .Jugadores-wrapper .react-3d-carousel {
+        height: 100%!important;
+        width: 70%;
+    }
+    .Jugadores-wrapper {
+        height: 500px;
+    }
+    .Jugadores-wrapper .Card {
+        height: 400px;
+        width: 400px;
+    }
+}
+@media (min-width: 1024px) {
+    .Jugadores-row {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}

@@ -1,0 +1,58 @@
+.Wing-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-bottom: -75px;
+    margin-left: -42px;
+    padding: 0;
+    width: 284px;
+    z-index: 0;
+}
+.Wing {
+    align-self: center;
+    background-image: url('../../assets/images/ala_oro.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    display: flex;
+    justify-content: center;
+    justify-self: flex-start;
+    height: 97px;
+    margin-bottom: -35px;
+    padding: 0;
+    width: 284px;
+    z-index: 10;
+}
+.Wing-name-container {
+    align-items: center;
+    background-image: url('../../assets/images/nombre_oro.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75% auto;
+    color: #bdb122;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -27px;
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 15;
+}
+.Wing-name {
+    z-index: 20;
+}
+.Wing-base {
+    background-image: url('../../assets/images/base_card.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    height: 50px;
+    justify-self: flex-end;
+    z-index: 0;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    
+}

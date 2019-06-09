@@ -1,0 +1,17 @@
+.ZigzagGrid {
+    background-color: #fff;
+    display: grid;
+    grid-template: repeat(3, 200px auto) / 90%;
+    justify-content: center;
+    padding: 30px 30px 50px 30px;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    .Jugadores-row {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}

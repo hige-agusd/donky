@@ -1,0 +1,19 @@
+.Stats {
+    align-content: center;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    .Stats {
+        justify-content: space-evenly;
+        padding: 25px 40px 50px 40px;
+        width: 50%;
+    }
+}

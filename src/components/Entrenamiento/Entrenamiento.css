@@ -1,0 +1,17 @@
+.Entrenamiento {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    .Entrenamiento {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
