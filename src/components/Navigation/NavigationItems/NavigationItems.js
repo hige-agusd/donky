@@ -1,7 +1,8 @@
 import React from 'react';
+import NavigationItem from './NavigationItem/NavigationItem';
+import SignOutButton from '../../../containers/SignOut';
 
 import './NavigationItems.css';
-import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = () => (
     <ul className={'NavigationItems'}>
@@ -11,6 +12,7 @@ const navigationItems = () => (
         <NavigationItem link="/beneficios">Beneficios</NavigationItem>
         <a href="#footer" className={'btn'}>Contacto</a>
         {/* <NavigationItem link="#footer" class={'btn'}>Contacto</NavigationItem> */}
+        <SignOutButton />
     </ul>
 );
 

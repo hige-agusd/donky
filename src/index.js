@@ -10,10 +10,13 @@ import { faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 import './index.css';
 import App from './containers/App/App';
+import Firebase, { FirebaseContext } from './containers/Firebase';
+
 import * as serviceWorker from './serviceWorker';
 
 import torneos from './store/reducers/torneos';
 import equipos from './store/reducers/equipos';
+import auth from './store/reducers/auth';
 
 library.add(faInstagram, faFacebookF);
 
@@ -21,7 +24,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     torneos: torneos,
-    equipos: equipos
+    equipos: equipos,
+    auth: auth
 });
 
 const store = createStore(rootReducer, composeEnhancers(
@@ -29,11 +33,13 @@ const store = createStore(rootReducer, composeEnhancers(
 ));
 
 const app = (
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>
+    <FirebaseContext.Provider value={new Firebase()}>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    </FirebaseContext.Provider>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

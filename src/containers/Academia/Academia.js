@@ -4,12 +4,8 @@ import axios from '../../axios-instance';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../store/actions/index';
 
-import Entrenamiento from '../../components/Entrenamiento/Entrenamiento';
-import SectionHeader from '../../components/SectionHeader/SectionHeader';
-import Equipos from '../../components/Equipos/Equipos';
-import Jugadores from '../../components/Jugadores/Jugadores';
-import ZigzagGrid from '../../components/ZigzagGrid/ZigzagGrid';
-import Sumate2 from '../../components/Sumate-2/Sumate-2';
+import AcademiaLogged from '../../components/AcademiaLogged/AcademiaLogged';
+import AcademiaPublic from '../../components/AcademiaPublic/AcademiaPublic';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 import './Academia.css';
@@ -24,8 +20,8 @@ class Academia extends Component {
     }
     parrafos = [
         {imagen: 'http://www.fillmurray.com/100/100', titulo: 'INICIAL', texto: 'Ea proident ea ipsum culpa officia nisi ad do. Aute duis ex deserunt ut duis fugiat exercitation Lorem dolor id. Irure Lorem ad do eu. Amet est elit magna ea officia aute in occaecat proident. Eu sunt commodo fugiat consequat ex sit do deserunt et culpa aliquip est.'},
-        {imagen: 'http://www.fillmurray.com/g/100/100', titulo: 'INTERMEDIO', texto: 'Consectetur sint officia sit consequat officia ut amet nulla enim do deserunt magna velit. Quis fugiat ex nisi nulla elit aliqua aute esse aliqua pariatur nulla. Lorem ex nulla mollit magna qui dolor dolore nostrud velit quis. Tempor laborum est enim ut consectetur nostrud amet esse enim sunt nostrud cillum commodo ad. Excepteur ea irure dolor enim dolor ad in eu ullamco. Cupidatat sunt consequat deserunt eu occaecat laboris est exercitation elit.'},
-        {imagen: 'http://www.fillmurray.com/100/100', titulo: 'AVANZADO', texto: 'Veniam ex elit officia reprehenderit eiusmod labore minim dolore ex labore in. Laborum magna culpa est occaecat. Reprehenderit nisi magna ipsum consequat reprehenderit sunt irure do cupidatat eiusmod culpa. Non exercitation consequat laborum irure amet cillum cillum reprehenderit. Consectetur esse ullamco est aute. Aute excepteur mollit aute aliqua excepteur amet ullamco commodo. Nisi aliquip ut aliqua ad in esse velit.'},
+        {imagen: 'http://www.fillmurray.com/g/100/100', titulo: 'INTERMEDIO', texto: 'Consectetur sint officia sit consequat officia ut amet nulla enim do deserunt magna velit. Quis fugiat ex nisi nulla elit aliqua aute esse aliqua pariatur nulla. Lorem ex nulla mollit magna qui dolor dolore nostrud velit quis.'},
+        {imagen: 'http://www.fillmurray.com/100/100', titulo: 'AVANZADO', texto: 'Veniam ex elit officia reprehenderit eiusmod labore minim dolore ex labore in. Laborum magna culpa est occaecat. Reprehenderit nisi magna ipsum consequat reprehenderit sunt irure do cupidatat eiusmod culpa. Non exercitation consequat laborum irure amet cillum cillum reprehenderit.'},
     ];
     jugador = {
         ficha: {
@@ -56,6 +52,9 @@ class Academia extends Component {
         this.refs.slider.slickPrev();
     }
     render() {
+        if ( this.props.isLogged ) {
+            console.log( this.props.isLogged );
+        }
         if (this.props.equipos.length) {
             this.jugador.ficha = {
                 ...this.jugador.ficha,
@@ -63,24 +62,12 @@ class Academia extends Component {
                     return eq.nombre === 'Medusas F.C.'
                 })[0].escudo
             };
-            console.log(this.jugador.ficha);
         }
-        const acade = this.props.equipos.length ? ( this.state.logged  ? 
-                (<>
-                    <SectionHeader titulo={'Entrenamiento en curso'} clase={'Posiciones'} />
-                    <Entrenamiento jugador={this.jugador} />
-                    <SectionHeader titulo={'Equipos'} clase={'Posiciones'} />
-                    <Equipos equipos={this.props.equipos} />
-                    <SectionHeader titulo={'Jugadores'} clase={'Posiciones'} />
-                    <Jugadores jugadores={this.props.equipos} />
-                </>)
-            : (<>
-                <SectionHeader titulo={'Jugadores'} clase={'Posiciones'} />
-                <Jugadores jugadores={this.props.equipos} />
-                <SectionHeader titulo={'Entrenamiento'} clase={'Posiciones'} />
-                <ZigzagGrid parrafos={this.parrafos} />
-                <Sumate2>Sumate</Sumate2>
-            </>)) : <Spinner />;
+        const acade = this.props.equipos.length ? ( this.props.isLogged  ? 
+                (<AcademiaLogged authUser={this.props.isLogged} jugador={this.jugador} equipos={this.props.equipos} />)
+                
+            : (<AcademiaPublic jugadores={this.props.equipos} parrafos={this.parrafos} />) )
+            : <Spinner />;
         
         return (
             <>
@@ -92,6 +79,7 @@ class Academia extends Component {
 
 const mapStateToProps = state => {
     return {
+        isLogged: state.auth.authUser,
         equipos: state.equipos.equipos,
         loadingEquipos: state.equipos.loading
    };

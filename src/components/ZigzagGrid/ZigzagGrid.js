@@ -4,7 +4,7 @@ import './ZigzagGrid.css';
 
 const zigzaggrid = props => {
     const parrafos = props.parrafos.length ? props.parrafos.map((parrafo, i) => (
-            <ParrafoImagen key={`pi${i}`} parrafo={parrafo} />
+            <ParrafoImagen key={`pi${i}`} index={i} parrafo={parrafo} />
     )) : [];
 
     return (

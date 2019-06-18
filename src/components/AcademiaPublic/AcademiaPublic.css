@@ -1,0 +1,13 @@
+.AcademiaPublic-entrenamiento {
+    background-color: #f6f6f6;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+    .AcademiaPublic-entrenamiento {
+        background-color: #f6f6f6;
+        padding: 20px;
+    }
+}

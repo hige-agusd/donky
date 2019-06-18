@@ -5,3 +5,6 @@ export {
 export {
     fetchEquipos
 } from './equipos';
+export {
+    setAuth
+} from './auth';

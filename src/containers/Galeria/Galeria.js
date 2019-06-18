@@ -29,7 +29,7 @@ class Novedades extends Component {
           </Row>
           <Row className={'Galeria-row'}>
             <Slider {...settings}>
-              {imagenes.map((imagen,i) => <div className={'Galeria-img-wrapper'} ><div className={'Galeria-img'} key={i} style={{backgroundImage: `url(${imagen})`}} ></div></div>)}
+              {imagenes.map((imagen,i) => <div key={`w${i}`} className={'Galeria-img-wrapper'} ><div className={'Galeria-img'} style={{backgroundImage: `url(${imagen})`}} ></div></div>)}
             </Slider>
           </Row>
         </Container>

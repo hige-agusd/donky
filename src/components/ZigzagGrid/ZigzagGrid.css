@@ -1,12 +1,15 @@
 .ZigzagGrid {
     background-color: #fff;
     display: grid;
-    grid-template: repeat(3, 200px auto) / 90%;
+    grid-template: repeat(3, auto) / 90%;
     justify-content: center;
     padding: 30px 30px 50px 30px;
 }
 
 @media (min-width: 768px) {
+    .ZigzagGrid {
+        grid-template: repeat(3, 200px) / 90%;
+    }
 }
 @media (min-width: 1024px) {
     .Jugadores-row {
