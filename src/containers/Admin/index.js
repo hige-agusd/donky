@@ -9,6 +9,7 @@ import * as ROLES from '../../constants/roles';
 import AdminJugadoras from "../../components/AdminJugadoras/AdminJugadoras";
 import AdminEquipos from "../../components/AdminEquipos/AdminEquipos";
 import AdminStats from "../../components/AdminStats/AdminStats";
+import AdminStaff from "../../components/AdminStaff/AdminStaff";
 import './AdminPage.css'
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
@@ -35,6 +36,10 @@ class AdminPage extends Component {
 
     if (!this.props.stats.length) {
       this.props.onFetchStats();
+    }
+
+    if (!this.props.staff.length) {
+      this.props.onFetchStaff();
     }
 
     /* if(!this.props.jugadoras.length) {
@@ -77,14 +82,17 @@ class AdminPage extends Component {
           (<AdminEquipos equipos={this.props.equipos} clicked={this.props.onSetEquipo} />)
           : null;
 
-    const stats = (this.props.jugadoras && !this.props.loadingJugadoras) /* && 
-                  (this.props.stats && !this.props.loadingStats)  */ ?
-                  (<AdminStats 
-                      jugadoras={this.props.jugadoras}
-                      stats={this.props.stats}
-                      clicked={this.props.onSetStats}
-                  />) : null;
+    const stats = this.props.jugadoras && !this.props.loadingJugadoras ?
+          (<AdminStats 
+              jugadoras={this.props.jugadoras}
+              stats={this.props.stats}
+              clicked={this.props.onSetStats}
+          />) : null;
 
+    const staff = this.props.staff && !this.props.loadingStaff ?
+          (<AdminStaff staff={this.props.staff} clicked={this.props.onSetStaffMember} />)
+          : null;
+        
 
     return (
       <div className={'AdminPage'}>
@@ -100,6 +108,7 @@ class AdminPage extends Component {
         <SectionHeader titulo={'Stats'} clase={'Posiciones'} />
         { stats }
         <SectionHeader titulo={'Staff'} clase={'Posiciones'} />
+        { staff }
 
       </div>
     );
@@ -132,6 +141,8 @@ const mapStateToProps = state => {
       loadingJugadoras: state.jugadoras.loading,
       stats: state.stats.stats,
       loadingStats: state.stats.loading,
+      staff: state.staff.staff,
+      loadingStaff: state.staff.loading,
   };
 };
 
@@ -143,6 +154,8 @@ const mapDispatchToProps = dispatch => {
     onSetEquipo: (equipo) => dispatch( actions.setEquipo(equipo) ),
     onFetchStats: () => dispatch( actions.fetchStats() ),
     onSetStats: (stats) => dispatch( actions.setStats(stats) ),
+    onFetchStaff: () => dispatch( actions.fetchStaff() ),
+    onSetStaffMember: (staff) => dispatch( actions.setStaffMember(staff) ),
   };
 };
 

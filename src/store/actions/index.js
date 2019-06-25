@@ -15,5 +15,9 @@ export {
     fetchJugadoras
 } from './jugadoras';
 export {
+    setStaffMember,
+    fetchStaff
+} from './staff';
+export {
     setAuth
 } from './auth';

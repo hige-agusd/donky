@@ -1,0 +1,19 @@
+.NewStaff-row {
+    color: #000;
+}
+.NewStaff-row div {
+    display: inline-block;
+    width: 60px;
+}
+.NewStaff-row div:nth-of-type(2n) {
+    width: 100px;
+}
+.NewStaff-row div input {
+    width: 100%;
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1024px) {
+ 
+}
