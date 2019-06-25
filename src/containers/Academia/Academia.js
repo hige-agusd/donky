@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from '../../axios-instance';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import { AuthUserContext } from '../Session';
 import * as actions from '../../store/actions/index';
 
 import AcademiaLogged from '../../components/AcademiaLogged/AcademiaLogged';
@@ -43,7 +44,13 @@ class Academia extends Component {
     };
     
     componentDidMount() {
-        this.props.onFetchEquipos();
+        if (!this.props.jugadoras.length) {
+            this.props.onFetchJugadoras();
+        }
+    
+        if (!this.props.equipos.length) {
+            this.props.onFetchEquipos();
+        }
     }
     nextSlide() {
         this.refs.slider.slickNext();
@@ -52,9 +59,6 @@ class Academia extends Component {
         this.refs.slider.slickPrev();
     }
     render() {
-        if ( this.props.isLogged ) {
-            console.log( this.props.isLogged );
-        }
         if (this.props.equipos.length) {
             this.jugador.ficha = {
                 ...this.jugador.ficha,
@@ -63,10 +67,12 @@ class Academia extends Component {
                 })[0].escudo
             };
         }
-        const acade = this.props.equipos.length ? ( this.props.isLogged  ? 
-                (<AcademiaLogged authUser={this.props.isLogged} jugador={this.jugador} equipos={this.props.equipos} />)
-                
-            : (<AcademiaPublic jugadores={this.props.equipos} parrafos={this.parrafos} />) )
+        const acade = this.props.equipos.length ?  (<AuthUserContext.Consumer>
+            {authUser =>
+                authUser ? <AcademiaLogged authUser={this.props.isLogged} jugador={this.jugador} equipos={this.props.equipos} />
+                         : <AcademiaPublic jugadores={this.props.jugadoras} parrafos={this.parrafos} />
+            }
+        </AuthUserContext.Consumer>)
             : <Spinner />;
         
         return (
@@ -81,13 +87,16 @@ const mapStateToProps = state => {
     return {
         isLogged: state.auth.authUser,
         equipos: state.equipos.equipos,
-        loadingEquipos: state.equipos.loading
+        loadingEquipos: state.equipos.loading,
+        jugadoras: state.jugadoras.jugadoras,
+        loadingJugadoras: state.jugadoras.loading
    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchEquipos: () => dispatch( actions.fetchEquipos() )
+        onFetchEquipos: () => dispatch( actions.fetchEquipos() ),
+        onFetchJugadoras: () => dispatch( actions.fetchJugadoras() )
     };
 };
 

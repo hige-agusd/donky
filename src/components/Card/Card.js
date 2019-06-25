@@ -4,9 +4,10 @@ import Wing from "../Wing/Wing";
 
 const card = props => {
     const images = require.context('../../assets/images', true);
-    const escudo = images(`./${props.card.escudo}`);
-    const foto = props.card.foto ? props.card.foto : images(`./${props.card.pic_equipo}`);
-    const nombre = props.card.ala ? <Wing nombre={props.card.nombre} /> :
+    const escudo = props.card.escudo ? (props.card.escudo.match(/^http/) ? props.card.escudo : images(`./${props.card.escudo}`)) : '';
+    const foto = props.card.foto.match(/^http/) ? props.card.foto : images(`./${props.card.foto}`);
+       
+    const nombre = props.card.ala ? <Wing nombre={props.card.nombre} nivel={props.card.ala} /> :
         <span className={'Card-name'}>{props.card.nombre}</span>;    
     return (
         <div className={'Card'}>

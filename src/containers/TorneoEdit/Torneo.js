@@ -32,9 +32,7 @@ class Torneo extends Component {
             visitante
         };
         axios.put(`torneos/0/categorias/${cat}/fechas/${fec}/partidos/${part}.json`, partido).then(res => {
-            console.log(res);
             const tabla = [...this.props.torneo.categorias[cat].tabla];
-            console.log(tabla);
             let localInd, visitInd;
             const local = tabla.filter((eq, index) => {
                 let retVal = false; 
@@ -77,9 +75,6 @@ class Torneo extends Component {
             const visitUrl = `torneos/0/categorias/${cat}/tabla/${visitInd}.json`;
             this.updateTabla(localUrl, local);
             this.updateTabla(visitUrl, visitante);
-            console.log(local);
-            console.log(localInd);
-            console.log(this.props.torneo.categorias[cat].tabla);
         });
     }
    
@@ -99,7 +94,6 @@ class Torneo extends Component {
             : <Spinner />;
             if (this.props.torneo && this.props.equipos) {
             const tabla = [...this.props.torneo.categorias[0].tabla];
-            console.log(tabla);
         }
         // const fechas = this.props.torneo ? this.props.torneo.fechas.map((fecha, i) => <Fechas num={i+1} key={i} partidos={fecha} /> ) : null;
         return (

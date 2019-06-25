@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import * as actions from '../../store/actions/index';
-import { withFirebase } from '../Firebase';
+import { withAuthentication } from '../Session';
 
 import Home from '../Home/Home';
 import Torneo from '../Torneo/Torneo';
@@ -11,23 +8,13 @@ import Academia from '../Academia/Academia';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import TorneoEdit from '../TorneoEdit/Torneo';
+import Admin from '../Admin';
 import Layout from '../../hoc/Layout/Layout';
+import * as ROUTES from '../../constants/routes';
 import '../../assets/fonts/Donky_Fuente.ttf';
 import './App.css';
 
 class App extends Component {
-
-  componentDidMount() {
-    this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.props.setAuth(authUser)
-        : this.props.setAuth();
-    });
-  }
-
-  componentWillUnmount() {
-    this.listener();
-  }
 
   render() {
     return (
@@ -40,6 +27,7 @@ class App extends Component {
             <Route path="/signup" component={SignUpPage} />
             <Route path="/signin" component={SignInPage} />
             <Route path="/admin" component={TorneoEdit} />
+            <Route path={ROUTES.ADMIN} component={Admin} />
           </Switch>
         </Layout>
       </div>
@@ -47,14 +35,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {};
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-      setAuth: (auth) => dispatch( actions.setAuth(auth) )
-  };
-};
-
-export default withRouter( connect( mapStateToProps, mapDispatchToProps )(withFirebase(App)) );
+export default withAuthentication(App);

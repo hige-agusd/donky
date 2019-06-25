@@ -4,7 +4,6 @@ import './ParrafoImagen.css';
 const parrafoimagen = props => {
     // const images = require.context('../../assets/images', true);
     // const imagen = images(`./${props.parrafo.imagen}`);
-    console.log(props);
     const imagen = props.parrafo.imagen;
     const even = props.index % 2 ? 'even' : '';
     

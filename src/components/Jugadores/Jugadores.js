@@ -6,7 +6,7 @@ import './Jugadores.css';
 
 const jugadores = props => {
     const slides = props.jugadores.length ? props.jugadores.map((jugador, i) => (
-        <Card key={`ju${i}`} card={jugador} />
+        <Card key={`ju${i}`} card={{...jugador, ala: true}} />
     )) : [];
     const carousel = slides.length ? 
             <Carousel slides={slides} /> : null;

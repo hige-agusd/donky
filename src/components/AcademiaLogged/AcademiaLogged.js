@@ -3,6 +3,7 @@ import Entrenamiento from '../../components/Entrenamiento/Entrenamiento';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import Equipos from '../../components/Equipos/Equipos';
 import Jugadores from '../../components/Jugadores/Jugadores';
+import { withAuthorization } from '../../containers/Session';
 
 const academiaLogged = props => {
     return (
@@ -17,4 +18,9 @@ const academiaLogged = props => {
 
 };
 
-export default academiaLogged;
+const condition = (authUser) => { 
+    return !!authUser 
+};
+
+// export default academiaLogged;
+export default withAuthorization(condition)(academiaLogged);

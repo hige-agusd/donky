@@ -21,6 +21,25 @@ export const fetchEquiposStart = () => {
     };
 };
 
+export const addEquipo = (equipo) => {
+    return {
+        type: actionTypes.ADD_EQUIPO,
+        equipo: equipo
+    }
+}
+
+export const setEquipo = (equipo) => {
+    return dispatch => {
+        axios.put( `/equipos/${equipo.key}.json`, equipo.value )
+            .then( res => {
+                dispatch(addEquipo(equipo));
+            })
+            .catch( err => {
+                dispatch(fetchEquiposFail(err));
+            } );
+    }
+}
+
 export const fetchEquipos = () => {
     return dispatch => {
         dispatch(fetchEquiposStart());

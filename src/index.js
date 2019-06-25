@@ -16,6 +16,8 @@ import * as serviceWorker from './serviceWorker';
 
 import torneos from './store/reducers/torneos';
 import equipos from './store/reducers/equipos';
+import jugadoras from './store/reducers/jugadoras';
+import stats from './store/reducers/stats';
 import auth from './store/reducers/auth';
 
 library.add(faInstagram, faFacebookF);
@@ -25,6 +27,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
     torneos: torneos,
     equipos: equipos,
+    jugadoras: jugadoras,
+    stats: stats,
     auth: auth
 });
 
