@@ -37,3 +37,7 @@
     margin-top: -3px;
     text-align: center!important;
 }
+
+.StatBar-percentage.no-stats {
+    background-color: #ffc23e!important;
+}

@@ -15,11 +15,15 @@ const fichaJugador = props => {
                 </div>
                 <div className={'FichaJugador-dato'}>
                     <span className={'FichaJugador-dato-etiqueta'}>edad</span>
-                    <div className={'FichaJugador-dato-valor'}>{props.ficha.edad} </div>
+                    <div className={'FichaJugador-dato-valor'}>{props.ficha.edad?props.ficha.edad:'?'} </div>
                 </div>
                 <div className={'FichaJugador-dato'}>
                     <span className={'FichaJugador-dato-etiqueta'}>equipo</span>
                     <div className={'FichaJugador-dato-valor'}>{props.ficha.equipo} </div>
+                </div>
+                <div className={'FichaJugador-dato'}>
+                    <span className={'FichaJugador-dato-etiqueta'}>n° camiseta</span>
+                    <div className={'FichaJugador-dato-valor'}>{props.ficha.camiseta?props.ficha.camiseta:'?'} </div>
                 </div>
                 <div className={'FichaJugador-dato'}>
                     <span className={'FichaJugador-dato-etiqueta'}>nº socix</span>

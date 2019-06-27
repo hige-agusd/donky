@@ -9,3 +9,4 @@ export const FIXTURE = '/fixture';
 export const ACADEMIA = '/academia';
 export const BENEFICIOS = '/beneficios';
 export const TORNEO_EDIT = '/torneo-edit';
+export const VERIFY_MAIL = '/verify-mail';

@@ -6,6 +6,8 @@ import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 
+import './SignUp.css';
+
 const SignUpPage = () => (
   <div>
     <h1>SignUp</h1>
@@ -50,7 +52,7 @@ class SignUpFormBase extends Component {
       })
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.VERIFY_MAIL);
       })
       .catch(error => {
         this.setState({ error });
@@ -86,7 +88,7 @@ class SignUpFormBase extends Component {
       !nro_socio;
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className={'SignUpForm'}>
         <input
           name="username"
           value={username}

@@ -1,9 +1,11 @@
 .StaffMembers-wrapper {
+    background-color: #fff;
     height: 100%;
 }
 .StaffMembers-header {
+    color: #a4a4a4;
     display: flex;
-    height: 25%;
+    height: 15%;
     align-items: center;
     margin: auto;
     justify-content: center;
@@ -36,21 +38,28 @@
 .StaffMember-wrapper {
     display: inline-block;
     height: 100%;
+    padding-top: 5%
 }
 .slick-slide .StaffMember-image {
+    border-radius: 50%;
     display: inline-block;
+    height: 30%;
 }
 .StaffMember-name {
     color: #f41497;
-    font-size: 2vh;
+    font-size: 2em;
     font-weight: bold;
     margin-top: 3vh;
+    text-transform: uppercase;
 }
 .StaffMember-job {
-    font-size: 1.5vh;
+    color: #000;
+    font-size: 1.8rem;
+    text-transform: uppercase;
 }
 .StaffMember-bio {
-    font-size: 1.5vh;
+    color: #a4a4a4;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: auto;
     margin-top: 4vh;
@@ -93,4 +102,12 @@
 
 .StaffMember-btn:hover span {
 	background: transparent;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+  .Staff-static-image {
+    display: inline-block;
+  }
 }

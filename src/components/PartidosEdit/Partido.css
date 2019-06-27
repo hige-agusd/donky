@@ -68,9 +68,7 @@
     margin: 0;
 }
 @media (min-width: 768px) {
-    .Frase {
-        font-size: 2vh;
-    }
+    
     .Partido-goles-edit input {
         margin-top: 10px;
         width: 60px;

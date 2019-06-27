@@ -8,6 +8,13 @@ export const fetchStatsSuccess = ( stats ) => {
     };
 };
 
+export const fetchIndividualStatsSuccess = ( stats ) => {
+    return {
+        type: actionTypes.FETCH_MY_STATS_SUCCESS,
+        stats: stats
+    };
+};
+
 export const fetchStatsFail = ( error ) => {
     return {
         type: actionTypes.FETCH_STATS_FAIL,
@@ -27,6 +34,19 @@ export const addStats = (stats) => {
         stats: stats
     }
 }
+
+export const fetchStatsById = (id) => {
+    return dispatch => {
+        dispatch(fetchStatsStart());
+        axios.get( `/stats/${id}.json` )
+            .then( res => {
+                dispatch(fetchIndividualStatsSuccess(res.data));
+            } )
+            .catch( err => {
+                dispatch(fetchStatsFail(err));
+            } );
+    };
+};
 
 export const setStats = (stats) => {
     return dispatch => {

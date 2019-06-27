@@ -8,7 +8,7 @@ import './AcademiaPublic.css';
 const academiaPublic = props => {
     return (
         <>
-            <SectionHeader titulo={'Jugadores'} clase={'Posiciones'} />
+            <SectionHeader titulo={'Jugadoras'} clase={'Posiciones'} />
             <Jugadores jugadores={props.jugadores} />
             <SectionHeader titulo={'Entrenamiento'} clase={'Posiciones'} />
             <div className={'AcademiaPublic-entrenamiento'}>

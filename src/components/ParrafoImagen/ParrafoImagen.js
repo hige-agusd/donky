@@ -9,10 +9,15 @@ const parrafoimagen = props => {
     
     return (
         <div className={`ParrafoImagen-wrapper ${even}`}>
-            <div className={'ParrafoImagen-imagen'} style={{ backgroundImage: `url(${imagen})` }} ></div>
+            <img className={'ParrafoImagen-imagen'} src={imagen} />
             <div className={'ParrafoImagen-parrafo'}> 
                 <h3 className={'ParrafoImagen-parrafo-titulo'}>{props.parrafo.titulo}</h3>
-                <span className={'ParrafoImagen-parrafo-texto'}>{props.parrafo.texto}</span>
+                <p className={'ParrafoImagen-parrafo-texto'}>{
+                    props.parrafo.texto ? (typeof props.parrafo.texto === 'string' ? props.parrafo.texto :
+                    props.parrafo.texto.map(renglon => (
+                        <li>{renglon}</li>
+                    ))) : null
+                }</p>
             </div>
         </div>
     );

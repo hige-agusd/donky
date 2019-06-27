@@ -13,6 +13,8 @@ import Layout from '../../hoc/Layout/Layout';
 import * as ROUTES from '../../constants/routes';
 import '../../assets/fonts/Donky_Fuente.ttf';
 import './App.css';
+import VerifyEmailPage from '../VerifyEmail';
+import VerifyEmail from '../VerifyEmail';
 
 class App extends Component {
 
@@ -26,7 +28,8 @@ class App extends Component {
             <Route path="/academia" component={Academia} />
             <Route path="/signup" component={SignUpPage} />
             <Route path="/signin" component={SignInPage} />
-            <Route path="/admin" component={TorneoEdit} />
+            <Route path={ROUTES.TORNEO_EDIT} component={TorneoEdit} />
+            <Route path={ROUTES.VERIFY_MAIL} component={VerifyEmail} />
             <Route path={ROUTES.ADMIN} component={Admin} />
           </Switch>
         </Layout>

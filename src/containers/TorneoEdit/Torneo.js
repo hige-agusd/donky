@@ -93,7 +93,7 @@ class Torneo extends Component {
             )
             : <Spinner />;
             if (this.props.torneo && this.props.equipos) {
-            const tabla = [...this.props.torneo.categorias[0].tabla];
+            // const tabla = [...this.props.torneo.categorias[0].tabla];
         }
         // const fechas = this.props.torneo ? this.props.torneo.fechas.map((fecha, i) => <Fechas num={i+1} key={i} partidos={fecha} /> ) : null;
         return (

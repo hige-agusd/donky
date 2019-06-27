@@ -3,11 +3,19 @@ import { updateObject } from '../utility';
 
 const initialState = {
     stats: {},
+    myStats: [],
     loading: false,
 };
 
 const fetchStatsStart = ( state, action ) => {
     return updateObject( state, { loading: true } );
+};
+
+const fetchIndividualStatsSuccess = ( state, action ) => {
+    return updateObject( state, {
+        myStats: action.stats,
+        loading: false
+    } );
 };
 
 const fetchStatsSuccess = ( state, action ) => {
@@ -31,6 +39,7 @@ const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
         case actionTypes.FETCH_STATS_START: return fetchStatsStart( state, action );
         case actionTypes.FETCH_STATS_SUCCESS: return fetchStatsSuccess( state, action );
+        case actionTypes.FETCH_MY_STATS_SUCCESS: return fetchIndividualStatsSuccess( state, action );
         case actionTypes.FETCH_STATS_FAIL: return fetchStatsFail( state, action );
         case actionTypes.ADD_STATS: return addStats( state, action );
         default: return state;

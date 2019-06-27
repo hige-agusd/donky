@@ -1,14 +1,16 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
 
-const staffMember = props => (
+const staffMember = props => {
+  const images = require.context('../../assets/images', true);
+  const foto = props.foto.match(/^http/) ? props.foto : images(`./${props.foto}`);
+  return (
     <div className={"StaffMember-wrapper"}>
-      <img className={"StaffMember-image"} src={props.image} alt={props.name}></img>
-      <div className={'StaffMember-name'}>{props.name}</div>
-      <div className={'StaffMember-job'}>{props.job}</div>
+      <img className={"StaffMember-image"} src={foto} alt={props.nombre}></img>
+      <div className={'StaffMember-name'}>{props.nombre}</div>
+      <div className={'StaffMember-job'}>{props.rol}</div>
       <div className={'StaffMember-bio'}>{props.bio}</div>
-      <NavLink to={`${props.link}/${props.id}`} className={'StaffMember-btn'} ><span>{props.btn_label}</span></NavLink>
     </div>
-);
+  );
+}
 
 export default staffMember;

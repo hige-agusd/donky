@@ -7,7 +7,7 @@ import './DonkyLogo.css';
 const logo = props => (
   <Container fluid={true} className={'DonkyLogo'}>
     <div className={"DonkyLogo-Logo"} style={{ height: props.height }}>
-      <img src={donkyLogo} alt="MyBurger" />
+      <img src={donkyLogo} alt="Logo Donky Futbol" />
     </div>
   </Container>
 );

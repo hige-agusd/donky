@@ -32,6 +32,8 @@ class Firebase {
 
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
+  doVerifyMail = () =>  this.auth.currentUser.sendEmailVerification()
+
    // *** Merge Auth and DB User API *** //
 
    onAuthUserListener = (next, fallback) =>

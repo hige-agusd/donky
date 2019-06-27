@@ -3,7 +3,7 @@
     flex-direction: column;
     height: 150px;
     margin-bottom: -75px;
-    margin-left: -42px;
+    margin-left: -52px;
     padding: 0;
     width: 284px;
     z-index: 0;
@@ -52,6 +52,22 @@
 }
 
 @media (min-width: 768px) {
+    .Wing-wrapper {
+        height: 250px;
+        margin-bottom: -150px;
+        margin-left: -75px;
+        width: 550px;
+    }
+    .Wing {
+        height: 170px;
+        width: 550px;
+    }
+    .Wing-name {
+        font-size: 25px;
+    }
+    .Wing-base {
+        height: 80px;
+    }
 }
 @media (min-width: 1024px) {
     

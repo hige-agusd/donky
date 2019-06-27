@@ -8,7 +8,8 @@ export {
 } from './equipos';
 export {
     setStats,
-    fetchStats
+    fetchStats,
+    fetchStatsById
 } from './stats';
 export {
     setJugadora,

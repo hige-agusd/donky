@@ -6,9 +6,19 @@
 }
 .Staff-col {
   height: 100%;
+  padding: 0;
 }
 .Staff-static-image {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
+  display: none;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+  .Staff-static-image {
+    display: inline-block;
+  }
 }

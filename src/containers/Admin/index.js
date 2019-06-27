@@ -72,7 +72,7 @@ class AdminPage extends Component {
   }
 
   render() {
-    const { users, loading } = this.state;
+    const { /* users, */ loading } = this.state;
 
     const jugadoras = this.props.jugadoras && !this.props.loadingJugadoras ?
           (<AdminJugadoras jugadoras={this.props.jugadoras} clicked={this.props.onSetJugadora} />)
@@ -115,6 +115,7 @@ class AdminPage extends Component {
   }
 }
 
+/*
 const UserList = ({ users }) => (
   <ul>
     {users.map(user => (
@@ -132,6 +133,7 @@ const UserList = ({ users }) => (
     ))}
   </ul>
 );
+*/
 
 const mapStateToProps = state => {
   return {

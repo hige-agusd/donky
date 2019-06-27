@@ -17,7 +17,7 @@
     flex-direction: column;
     font-size: 18px;
     justify-content: space-evenly;
-    padding: 0 25px;
+    padding: 0 25px 0 10px;
 }
 .App .FichaJugador-dato * {
     font-family: 'Helvetica', sans-serif;
@@ -34,6 +34,34 @@
 }
 
 @media (min-width: 768px) {
+    .FichaJugador {
+        flex-direction: row;
+    }
+    .FichaJugador-datos {
+        padding-top: 25px;
+    }
+    .FichaJugador .Wing-wrapper {
+        height: 150px;
+        margin-bottom: -75px;
+        margin-left: -52px;
+        width: 284px;
+    }
+    .FichaJugador .Wing {
+        height: 97px;
+        margin-bottom: -35px;
+        width: 284px;
+    }
+    .FichaJugador .Wing-name-container {
+        margin-bottom: -27px;
+        padding: 0 0 5px 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+    .FichaJugador .Wing-base {
+        height: 50px;
+        justify-self: flex-end;
+        z-index: 0;
+    }
 }
 @media (min-width: 1024px) {
     .FichaJugador {

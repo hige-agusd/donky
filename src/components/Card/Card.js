@@ -7,10 +7,10 @@ const card = props => {
     const escudo = props.card.escudo ? (props.card.escudo.match(/^http/) ? props.card.escudo : images(`./${props.card.escudo}`)) : '';
     const foto = props.card.foto.match(/^http/) ? props.card.foto : images(`./${props.card.foto}`);
        
-    const nombre = props.card.ala ? <Wing nombre={props.card.nombre} nivel={props.card.ala} /> :
+    const nombre = props.card.nivel ? <Wing nombre={props.card.nombre} nivel={props.card.nivel} /> :
         <span className={'Card-name'}>{props.card.nombre}</span>;    
     return (
-        <div className={'Card'}>
+        <div className={`Card ${props.card.nivel ? 'Card-Wing' : ''}`}>
             <div className={'Card-escudo'} style={{ backgroundImage: `url(${escudo}` }} ></div>
             <div className={'Card-imagen'} style={{ backgroundImage: `url(${foto})` }} >
                 { nombre }
