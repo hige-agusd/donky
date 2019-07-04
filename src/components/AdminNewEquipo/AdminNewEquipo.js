@@ -8,7 +8,7 @@ class adminNewEquipo extends Component {
         super(props);
         this.state = {
             ...props.equipo,
-            isNew: !props.equipo.index,
+            isNew: props.equipo.id === '',
             isInvalid: true
         }
     }
@@ -32,7 +32,7 @@ class adminNewEquipo extends Component {
         this.props.clicked(equipo);
         if(this.state.isNew) {
             this.setState({
-                index: '',
+                id: '',
                 nombre: '',
                 foto: '',
                 escudo: '',
@@ -115,7 +115,7 @@ class adminNewEquipo extends Component {
                 <label>
                 Activo:
                     <input
-                        name="activa"
+                        name="activo"
                         type="checkbox"
                         checked={this.state.activo}
                         onChange={this.onChangeCheckbox}

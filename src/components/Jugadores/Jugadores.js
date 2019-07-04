@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import './Jugadores.css';
 
 const jugadores = props => {
-    const slides = props.jugadores.length ? props.jugadores.map((jugador, i) => (
+    const slides = props.jugadores.length ? props.jugadores.filter(jugadora => jugadora.activa).map((jugador, i) => (
         <Card key={`ju${i}`} card={{...jugador, ala: true}} />
     )) : [];
     const carousel = slides.length ? 

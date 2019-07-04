@@ -53,7 +53,7 @@ class Novedades extends Component {
         <div className={'Galeria-img'} style={{backgroundImage: `url(${imagen.images.low_resolution.url})`}} onClick={() => this.openImage(imagen.link)} ></div>
       </div>)
       :null;
-      const post = this.state.post ? <Modal show={this.state.post} modalClosed={this.closeImage}><div dangerouslySetInnerHTML={{__html:this.state.post}}></div></Modal> : null;
+      const post = this.state.post ? <Modal classes={'ig'} show={this.state.post} modalClosed={this.closeImage}><div dangerouslySetInnerHTML={{__html:this.state.post}}></div></Modal> : null;
       return (
         <Container fluid={true} className={'Galeria-section'}>
           {post}

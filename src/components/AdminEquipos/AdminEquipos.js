@@ -7,7 +7,7 @@ import "./AdminEquipos.css";
 const adminEquipos = props => {
 
     const equipoVacia = {
-        index: '',
+        id: '',
         nombre: '',
         foto: '',
         escudo: '',
@@ -18,9 +18,9 @@ const adminEquipos = props => {
     };
 
     const onClicked = equipo => {
-        const {index, nombre, foto, escudo, categoria, link, interno, activo } = equipo;
+        const {id, nombre, foto, escudo, categoria, link, interno, activo } = equipo;
         const newEquipo = {
-            key: index ? index : props.equipos.length,
+            key: id ? id : props.equipos.length,
             value: {
                 nombre,
                 foto,
