@@ -8,6 +8,21 @@ import './Novedades.css';
 class Novedades extends Component {
 
   render() {
+      // console.log(this.props.novedades);
+      const novedades = this.props.novedades && this.props.novedades.length ?
+      (
+      <Container fluid={true} className={'Novedades-section'}>
+        <Row className={'Novedades-header'}>
+          <h3 className={'Novedades-titulo'}>NOVEDADES</h3> <h6 className={'Novedades-subtitulo'}>FUTBOL FEMENINO</h6>
+        </Row>
+        <Row className={'Novedades-row'}>
+          { this.props.novedades.map( (novedad, i) =>
+            <Col className={'col-xs-12 Novedades-col'} md={4}><Novedad link={`${novedad.link}/${novedad.id}`} image={novedad.image} content={novedad.content}/></Col>
+          )}
+        </Row>
+      </Container>)
+      : null;
+      // console.log(novedades);
       const novedad = { 
         content: {
           titulo: 'Amistoso Internacional',
@@ -20,16 +35,7 @@ class Novedades extends Component {
         image: amistoso
       }
       return (
-        <Container fluid={true} className={'Novedades-section'}>
-          <Row className={'Novedades-header'}>
-            <h3 className={'Novedades-titulo'}>NOVEDADES</h3> <h6 className={'Novedades-subtitulo'}>FUTBOL FEMENINO</h6>
-          </Row>
-          <Row className={'Novedades-row'}>
-            <Col className={'col-xs-12 Novedades-col'} md={4}><Novedad link={`${novedad.link}/${novedad.id}`} image={novedad.image} content={novedad.content}/></Col>
-            <Col className={'col-xs-12 Novedades-col'} md={4}><Novedad link={`${novedad.link}/${novedad.id}`} image={novedad.image} content={novedad.content}/></Col>
-            <Col className={'col-xs-12 Novedades-col'} md={4}><Novedad link={`${novedad.link}/${novedad.id}`} image={novedad.image} content={novedad.content}/></Col>
-          </Row>
-        </Container>
+        novedades
       );
   }
 

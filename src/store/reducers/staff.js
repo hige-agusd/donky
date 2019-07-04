@@ -23,7 +23,6 @@ const fetchStaffFail = ( state, action ) => {
 
 const addStaffMember = (state, action ) => {
     const newStaff = [...state.staff];
-    console.log(action.staffMember);
     newStaff[action.staffMember.index] = action.staffMember.value;
     return updateObject(state, {staff: newStaff});
 }

@@ -23,6 +23,9 @@ class Home extends Component {
         if (!this.props.staff.length) {
             this.props.onFetchStaff();
         }
+        if(!this.props.galeria && !this.props.novedades) {
+            this.props.onFetchIGFeed();
+        }
     }
 
     render() {
@@ -33,10 +36,10 @@ class Home extends Component {
             <Sponsors />
             <DonkyLogo />
             <Links />
-            <Novedades />
+            <Novedades novedades={this.props.novedades} />
             <Staff staff={this.props.staff} />
             <Frase frase={frase} />
-            <Galeria />
+            <Galeria fotos={this.props.galeria} />
             <Sumate />
         </Container>);
     }
@@ -46,13 +49,17 @@ class Home extends Component {
 const mapStateToProps = state => {
     return {
         staff: state.staff.staff,
-        loadingJugadoras: state.staff.loading
+        loadingJugadoras: state.staff.loading,
+        novedades: state.ig.novedades,
+        galeria: state.ig.galeria,
+        igLoading: state.ig.loading,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         onFetchStaff: () => dispatch( actions.fetchStaff() ),
+        onFetchIGFeed: () => dispatch( actions.fetchIGFeed()),
     };
 };
   

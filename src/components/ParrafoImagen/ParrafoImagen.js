@@ -9,7 +9,7 @@ const parrafoimagen = props => {
     
     return (
         <div className={`ParrafoImagen-wrapper ${even}`}>
-            <img className={'ParrafoImagen-imagen'} src={imagen} />
+            <img className={'ParrafoImagen-imagen'} src={imagen} alt={`imagen de ${props.parrafo.titulo}`} />
             <div className={'ParrafoImagen-parrafo'}> 
                 <h3 className={'ParrafoImagen-parrafo-titulo'}>{props.parrafo.titulo}</h3>
                 <p className={'ParrafoImagen-parrafo-texto'}>{

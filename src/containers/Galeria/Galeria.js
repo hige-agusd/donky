@@ -1,15 +1,44 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
-import img1 from "../../assets/images/galeria_1.png";
-import img2 from "../../assets/images/galeria_2.png";
-import img3 from "../../assets/images/galeria_3.png";
-// import img4 from "../../assets/images/amistoso.png";
 import { Container, Row } from "react-bootstrap";
 import Slider from 'react-slick';
+import Modal from '../../components/UI/Modal/Modal';
 import './Galeria.css';
 import { NavLink } from 'react-router-dom';
 
 class Novedades extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      post: false
+    }
+  }
+
+  openImage = (link) => {
+    axios.get(`https://api.instagram.com/oembed/?url=${link}`)
+      .then( res => {
+        console.log(res);
+        this.setState({post: res.data.html}, () => {
+          if (window.instgrm) {
+              window.instgrm.Embeds.process()
+          }
+      });
+      })
+      .catch( err => console.log(err));
+  }
+
+  closeImage = () => {
+    this.setState({post: false});
+  }
+
+  embedProcess = () => {
+    window.instgrm.Embeds.process();
+  }
+
+  componentDidMount() {
+    console.log(123);
+  }
 
   render() {
       const settings = {
@@ -19,9 +48,15 @@ class Novedades extends Component {
         slidesToShow: 3,
         slidesToScroll: 1
       };
-      const imagenes = [img1, img2, img3, img1, img2, img3];
+      const imagenes = this.props.fotos && this.props.fotos.length ? 
+      this.props.fotos.map((imagen,i) => <div key={`w${i}`} className={'Galeria-img-wrapper'} >
+        <div className={'Galeria-img'} style={{backgroundImage: `url(${imagen.images.low_resolution.url})`}} onClick={() => this.openImage(imagen.link)} ></div>
+      </div>)
+      :null;
+      const post = this.state.post ? <Modal show={this.state.post} modalClosed={this.closeImage}><div dangerouslySetInnerHTML={{__html:this.state.post}}></div></Modal> : null;
       return (
         <Container fluid={true} className={'Galeria-section'}>
+          {post}
           <Row className={'Galeria-header'}>
             <h3 className={'Galeria-titulo'}>GALERIA</h3> 
             <h6 className={'Galeria-subtitulo'}>DONKY FUTBOL</h6>
@@ -29,7 +64,7 @@ class Novedades extends Component {
           </Row>
           <Row className={'Galeria-row'}>
             <Slider {...settings}>
-              {imagenes.map((imagen,i) => <div key={`w${i}`} className={'Galeria-img-wrapper'} ><div className={'Galeria-img'} style={{backgroundImage: `url(${imagen})`}} ></div></div>)}
+              {imagenes}
             </Slider>
           </Row>
         </Container>

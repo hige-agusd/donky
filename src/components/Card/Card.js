@@ -1,11 +1,21 @@
 import React from "react";
 import './Card.css';
 import Wing from "../Wing/Wing";
+import donkyLogo from '../../assets/images/Donky_logo.png';
 
 const card = props => {
     const images = require.context('../../assets/images', true);
     const escudo = props.card.escudo ? (props.card.escudo.match(/^http/) ? props.card.escudo : images(`./${props.card.escudo}`)) : '';
-    const foto = props.card.foto.match(/^http/) ? props.card.foto : images(`./${props.card.foto}`);
+    const foto = props.card.foto.match(/^http/) ? props.card.foto : getLocalFoto();
+    const getLocalFoto = () => {
+        let pic;
+        try { pic = images(`./${props.card.foto}`);}
+        catch(err) {
+          console.log(err);
+          pic = donkyLogo;
+        }  
+        return pic;
+    }
        
     const nombre = props.card.nivel ? <Wing nombre={props.card.nombre} nivel={props.card.nivel} /> :
         <span className={'Card-name'}>{props.card.nombre}</span>;    

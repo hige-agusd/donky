@@ -19,6 +19,7 @@ import equipos from './store/reducers/equipos';
 import jugadoras from './store/reducers/jugadoras';
 import stats from './store/reducers/stats';
 import staff from './store/reducers/staff';
+import ig from './store/reducers/ig';
 import auth from './store/reducers/auth';
 
 library.add(faInstagram, faFacebookF);
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
     jugadoras: jugadoras,
     stats: stats,
     staff: staff,
+    ig: ig,
     auth: auth
 });
 

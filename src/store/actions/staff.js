@@ -33,7 +33,6 @@ export const setStaffMember = (staffMember) => {
         axios.put( `/staff/${staffMember.index}.json`, staffMember.value )
             .then( res => {
                 dispatch(addStaffMember(staffMember));
-                // dispatch(fetchStaff(staffMember));
             })
             .catch( err => {
                 dispatch(fetchStaffFail(err));
@@ -46,14 +45,7 @@ export const fetchStaff = () => {
         dispatch(fetchStaffStart());
         axios.get( '/staff.json' )
             .then( res => {
-                console.log(res.data);
                 const fetchedStaff = res.data !== null ? res.data : [];
-                /* for ( let key in res.data ) {
-                    fetchedStaff.push( {
-                        ...res.data[key],
-                        id: key
-                    } );
-                } */
                 dispatch(fetchStaffSuccess(fetchedStaff));
             } )
             .catch( err => {

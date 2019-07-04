@@ -20,5 +20,8 @@ export {
     fetchStaff
 } from './staff';
 export {
+    fetchIGFeed,
+} from './ig';
+export {
     setAuth
 } from './auth';

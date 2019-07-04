@@ -28,7 +28,6 @@ export const fetchStatsStart = () => {
     };
 };
 export const addStats = (stats) => {
-    console.log(stats);
     return {
         type: actionTypes.ADD_STATS,
         stats: stats

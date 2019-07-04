@@ -45,6 +45,9 @@
     display: inline-block;
     height: 30%;
 }
+.slick-slide .StaffMember-image.missing-foto {
+    border-radius: 0;
+}
 .StaffMember-name {
     color: #f41497;
     font-size: 2em;

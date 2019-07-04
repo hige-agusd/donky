@@ -17,7 +17,7 @@ const staffMembers = props => {
           CONOCE A NUESTRO STAFF
         </div>
         <Slider {...settings}>
-          {props.staffMembers.map(member => <StaffMember key={member.id} {...member} />)}
+          {props.staffMembers.map((member, i) => <StaffMember key={`sm${i}`} {...member} />)}
         </Slider>
       </div>
     );

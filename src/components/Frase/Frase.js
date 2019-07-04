@@ -3,10 +3,10 @@ import { Container } from "react-bootstrap";
 import './Frase.css';
 
 const frase = props => {
-    const frase = props.frase ? typeof frase === 'string' ? 
+    const frase = props.frase ? typeof props.frase === 'string' ? 
         (<span className={'Frase'} >{props.frase}</span>) :
-        props.frase.map( renglon =>
-            (<span className={'Frase'} >{renglon}</span>) 
+        props.frase.map( (renglon, i) =>
+            (<span className={'Frase'} key={`Frase${i}`} >{renglon}</span>) 
         ) : null;
     
     return (
