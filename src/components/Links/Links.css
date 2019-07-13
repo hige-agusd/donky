@@ -75,13 +75,14 @@
     
 @media (min-width:768px) {
     .Links-section {
-        height: 280px;
+        height: 350px;
     }
     .Links-row {
         flex-direction: row;
     }
     .Links-col {
-        height: 280px;
+        height: 350px;
+        width: 50%;
     }
     .Links-overlay {
         height: 100%;

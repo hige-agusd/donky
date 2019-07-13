@@ -26,11 +26,11 @@
 
 @media (min-width:768px) {
     .Sponsors {
-        flex-direction: row;
-        height: 170px;
+        flex-direction: column;
+        height: 350px;
     }
     .Sponsors > div {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         width: 100%;
     }

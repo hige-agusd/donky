@@ -13,6 +13,8 @@ const fetchIGFeedStart = ( state, action ) => {
 
 const fetchIGFeedSuccess = ( state, action ) => {
     const [novedades, galeria] = action.igFeed.reduce(([p, f], e) => (e.tags.indexOf('novedades')  > -1 ? [[...p, e], f] : [p, [...f, e]]), [[], []]);
+    /* const novedades = action.igFeed.slice(0,3);
+    const galeria = action.igFeed; */
     return updateObject( state, {
         novedades,
         galeria,

@@ -55,13 +55,10 @@ class AdminPage extends Component {
     this.props.firebase.users().on("value", snapshot => {
       const usersObject = snapshot.val();
 
-      const usersList = Object.keys(usersObject).map(key => ({
-        ...usersObject[key],
-        uid: key
-      }));
+      
 
       this.setState({
-        users: usersList,
+        users: usersObject,
         loading: false
       });
     });
@@ -71,8 +68,15 @@ class AdminPage extends Component {
     this.props.firebase.users().off();
   }
 
+  aprobarSocio = (uid) => {
+    this.props.firebase.user(uid).update({
+      ...this.state.users[uid],
+      socioVerified: true
+    });
+  }
+
   render() {
-    const { /* users, */ loading } = this.state;
+    const { users, loading } = this.state;
 
     const jugadoras = this.props.jugadoras && !this.props.loadingJugadoras ?
           (<AdminJugadoras jugadoras={this.props.jugadoras} clicked={this.props.onSetJugadora} />)
@@ -92,7 +96,17 @@ class AdminPage extends Component {
     const staff = this.props.staff && !this.props.loadingStaff ?
           (<AdminStaff staff={this.props.staff} clicked={this.props.onSetStaffMember} />)
           : null;
+    
+    const pendingUsersList = !!this.state.users ? Object.keys(this.state.users)
+          .map(key => ({
+          ...this.state.users[key],
+          uid: key
+        })).filter(user => user.nro_socio && !user.socioVerified) 
+        : null;    
         
+    const usersList = pendingUsersList ?
+      <UserList users={pendingUsersList} aprobarSocio={(uid) => this.aprobarSocio(uid)} />
+      : null;
 
     return (
       <div className={'AdminPage'}>
@@ -100,7 +114,8 @@ class AdminPage extends Component {
 
         {loading && <div>Loading ...</div>}
 
-        {/* <UserList users={users} /> */}
+        { usersList }
+
         <SectionHeader titulo={'Jugadoras'} clase={'Posiciones'} />
         { jugadoras }
         <SectionHeader titulo={'Equipos'} clase={'Posiciones'} />
@@ -115,13 +130,15 @@ class AdminPage extends Component {
   }
 }
 
-/*
-const UserList = ({ users }) => (
+
+
+
+const UserList = ({ users, aprobarSocio }) => (
   <ul>
     {users.map(user => (
       <li key={user.uid}>
         <span>
-          <strong>ID:</strong> {user.uid}
+          <strong>N° de socia:</strong> {user.nro_socio}
         </span>
         <span>
           <strong>E-Mail:</strong> {user.email}
@@ -129,11 +146,14 @@ const UserList = ({ users }) => (
         <span>
           <strong>Username:</strong> {user.username}
         </span>
+        <button onClick={() => aprobarSocio(user.uid)} >
+            Aprobar
+        </button>
       </li>
     ))}
   </ul>
 );
-*/
+
 
 const mapStateToProps = state => {
   return {

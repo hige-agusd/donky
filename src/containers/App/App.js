@@ -15,6 +15,7 @@ import '../../assets/fonts/Donky_Fuente.ttf';
 import './App.css';
 import VerifyEmailPage from '../VerifyEmail';
 import VerifyEmail from '../VerifyEmail';
+import Account from '../Account';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
             <Route path={ROUTES.TORNEO_EDIT} component={TorneoEdit} />
             <Route path={ROUTES.VERIFY_MAIL} component={VerifyEmail} />
             <Route path={ROUTES.ADMIN} component={Admin} />
+            <Route path={ROUTES.ACCOUNT} component={Account} />
           </Switch>
         </Layout>
       </div>

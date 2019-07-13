@@ -13,11 +13,9 @@ class VerifyEmail extends Component {
   }
 
   doVerifyEmail = event => {
-    console.log('dve');
     this.props.firebase.doVerifyMail()
       .then(() => {
         // Create a user in your Firebase realtime database
-        console.log('sentsent');
       })
       /* .then(() => {
         this.props.history.push(ROUTES.HOME);
@@ -33,13 +31,12 @@ class VerifyEmail extends Component {
   
 
   render() {
-    console.log('dve');
     const error = this.state.error;
     return (
       <div className={'VerifyEmail'}>
         <p>
           Se envió un mail a tu casilla para verificar tu cuenta.
-          Si necesitás que se envíe nuevamente, hacé click acá <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+          Si necesitás que se envíe nuevamente, hacé click <span onClick={this.doVerifyEmail}>acá</span>
         </p>
         {error && <p>{error.message}</p>}
       </div>

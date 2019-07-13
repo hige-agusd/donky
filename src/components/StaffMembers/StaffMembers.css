@@ -31,6 +31,7 @@
 .slick-slider .slick-arrow.slick-prev {
     left: 0;
     transform: rotate(180deg) translateY(50%);
+    z-index: 100;;
 }
 .slick-slider .slick-arrow.slick-next {
     right: 0;

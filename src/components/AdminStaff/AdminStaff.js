@@ -17,7 +17,6 @@ const adminStaff = props => {
 
     const onClicked = staffMember => {
         const {index, nombre, rol, foto, bio, activo } = staffMember;
-        console.log(index);
         const newStaffMember = {
             index: index !== undefined ? index : props.staff && props.staff.length ? props.staff.length : 0,
             value: {

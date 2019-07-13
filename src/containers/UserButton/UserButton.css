@@ -1,0 +1,85 @@
+.UserButton.Mobile {
+    /* background-image: url('../../assets/images/avatar2.svg'); */
+    mask-image: url('../../assets/images/avatar2.svg');
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: auto;
+    display: inline-block;
+    height: 40px;
+    margin-top: 5px;
+    width: 40px;
+}
+.UserButton.Desktop {
+    display: none;
+}
+.UserButton {
+    background-color: #f41497;
+}
+
+.UserMenu {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px; 
+    color: #000;
+    display: none;
+    height: 0;
+    margin-right: -150px;
+    overflow: hidden;
+    position: relative;
+    top: 60px;
+    left: -150px;
+    transition: all 0.3s ease-out;
+    width: 150px;
+}
+.UserMenu ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.UserMenu ul li {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+.UserMenu ul li a{
+    color: #333;
+}
+.Mobile.UserMenu {
+    background: none;
+    border: none;
+    height: 0;
+    top: 0;
+    left: -75px;
+}
+.Mobile.UserMenu ul > li {
+    margin-top: 10px;
+}
+.Mobile.UserMenu ul li a{
+    color: #fff;
+}
+.Mobile.UserMenu.show {
+    height: 85px;
+}
+
+@media (min-width: 768px) {
+    .UserButton.Mobile {
+        display: none;
+    }
+    .UserButton.Desktop {
+        /* background-image: url('../../assets/images/avatar2.svg'); */
+        mask-image: url('../../assets/images/avatar2.svg');
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: auto;
+        display: inline-block;
+        height: 40px;
+        margin-top: 5px;
+        width: 40px;
+    }
+    .UserMenu.show {
+        height: 75px;
+        display: block;
+    }
+
+}

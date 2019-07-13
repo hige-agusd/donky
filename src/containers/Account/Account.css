@@ -1,0 +1,22 @@
+.AccountPage {
+    height: 100%;
+}
+.AccountPage form {
+    height: 200px;
+    width: 75%;
+}
+.AccountPage h1,
+.AccountPage h5 {
+    color: #333;
+}
+.AccountPage span {
+    color: #333;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    .AccountPage > input,
+    .AccountPage form {
+        width: 50%;
+    }
+}

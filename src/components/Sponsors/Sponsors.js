@@ -11,9 +11,6 @@ const sponsors = props => (
     <Container fluid={true} className={'Sponsors'}>
       <Row>
       <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>
-        <img src={birmutLogo} alt="Birmut Cervecería" />
-      </Col>
-      <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>
         <img src={warlordLogo} alt="Warlord Creations" />
       </Col>
       <Col className={"Sponsors-Logo col-xs-12"} md={4} style={{ height: props.height }}>

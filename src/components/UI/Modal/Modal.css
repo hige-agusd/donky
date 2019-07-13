@@ -35,6 +35,12 @@
     .Modal.ig {
         top: 1%;
     }
+    .Modal.Form {
+        top: 6%;
+        border: none;
+        height: 500px;
+        padding: 30px;
+    }
 }
 @media (min-width: 1280px) {
     .Modal.ig {

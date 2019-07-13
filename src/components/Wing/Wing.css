@@ -10,7 +10,7 @@
 }
 .Wing {
     align-self: center;
-    background-image: url('../../assets/images/ala_oro.png');
+    /* background-image: url('../../assets/images/ala_oro.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 90% auto;
@@ -23,16 +23,26 @@
     width: 284px;
     z-index: 10;
 }
+.Wing.Oro {
+    background-image: url('../../assets/images/ala_oro.png');
+}
+.Wing.Plata {
+    background-image: url('../../assets/images/ala_plata.png');
+    margin-top: 22px;
+}
+.Wing.Bronce {
+    background-image: url('../../assets/images/ala_bronce.png');
+    margin-top: 24px;
+}
 .Wing-name-container {
     align-items: center;
-    background-image: url('../../assets/images/nombre_oro.png');
+    /* background-image: url('../../assets/images/nombre_oro.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75% auto;
-    color: #bdb122;
+    color: #747474;
     display: flex;
     justify-content: center;
-    margin-bottom: -27px;
     padding: 0 0 5px 0;
     text-transform: uppercase;
     width: 100%;
@@ -40,6 +50,12 @@
 }
 .Wing-name {
     z-index: 20;
+}
+.Oro .Wing-name {
+    margin-top: 29px;
+}
+.Bronce .Wing-name {
+    margin-top: -3px;
 }
 .Wing-base {
     background-image: url('../../assets/images/base_card.png');

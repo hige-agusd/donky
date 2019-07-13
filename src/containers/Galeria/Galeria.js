@@ -5,7 +5,6 @@ import { Container, Row } from "react-bootstrap";
 import Slider from 'react-slick';
 import Modal from '../../components/UI/Modal/Modal';
 import './Galeria.css';
-import { NavLink } from 'react-router-dom';
 
 class Novedades extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class Novedades extends Component {
   openImage = (link) => {
     axios.get(`https://api.instagram.com/oembed/?url=${link}`)
       .then( res => {
-        console.log(res);
         this.setState({post: res.data.html}, () => {
           if (window.instgrm) {
               window.instgrm.Embeds.process()
@@ -34,10 +32,6 @@ class Novedades extends Component {
 
   embedProcess = () => {
     window.instgrm.Embeds.process();
-  }
-
-  componentDidMount() {
-    console.log(123);
   }
 
   render() {
@@ -60,7 +54,7 @@ class Novedades extends Component {
           <Row className={'Galeria-header'}>
             <h3 className={'Galeria-titulo'}>GALERIA</h3> 
             <h6 className={'Galeria-subtitulo'}>DONKY FUTBOL</h6>
-            <NavLink to={'/galeria'} className={'Galeria-btn Galeria-ver-fotos-btn'} >Ver Fotos</NavLink>
+            {/* <NavLink to={'/galeria'} className={'Galeria-btn Galeria-ver-fotos-btn'} >Ver Fotos</NavLink> */}
           </Row>
           <Row className={'Galeria-row'}>
             <Slider {...settings}>

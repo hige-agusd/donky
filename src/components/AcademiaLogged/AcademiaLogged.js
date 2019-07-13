@@ -13,7 +13,7 @@ import { withAuthorization } from '../../containers/Session';
 class academiaLogged extends React.Component {
 
     componentDidMount() {
-        if (!this.props.myStats.length) {
+        if (!this.props.myStats || !this.props.myStats.length) {
             this.props.onFetchStatsById(this.props.authUser.nro_socio);
         }
     }
@@ -43,7 +43,7 @@ class academiaLogged extends React.Component {
 
 
 const condition = (authUser) => { 
-    return !!authUser 
+    return !!authUser && authUser.socioVerified
 };
 
 const mapStateToProps = state => {

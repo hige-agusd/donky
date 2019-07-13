@@ -57,6 +57,7 @@
 
 @media (min-width: 768px) {
    .Sumate-2 {
+     background-size: cover;
      height: 300px;
    }
 }

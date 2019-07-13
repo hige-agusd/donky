@@ -53,6 +53,7 @@ class Firebase {
             authUser = {
               uid: authUser.uid,
               email: authUser.email,
+              emailVerified: this.auth.currentUser.emailVerified,
               ...dbUser,
             };
 
@@ -66,8 +67,12 @@ class Firebase {
   // *** User API ***
 
   user = uid => this.db.ref(`users/${uid}`);
+  
+  nuser = uid => this.db.ref(`users/${uid}/nro_socio`);
 
   users = () => this.db.ref("users");
+
+  setNroSocio = (uid, nro_socio) => this.db.ref(`users/${uid}/nro_socio`).update(nro_socio);
 
   jugadoras = () => this.db.ref("jugadoras");
 

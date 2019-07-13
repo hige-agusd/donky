@@ -12,3 +12,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.SignUpForm,
+.SignInForm,
+.Form {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.SignUpForm input,
+.SignInForm input,
+.Form input {
+  border: 1px solid #999;
+  border-radius: 50px;
+  color: #333;
+  height: 50px;
+  padding-left: 20px;
+  width: 75%;
+}
+
+.SignUpForm p,
+.SignInForm p,
+.Form p {
+  color: #de6366;
+}
+.Form button,
+.SignInForm button,
+.SignUpForm button {
+  /* background: #f41497; */
+  border-radius: 50px;
+  border: none;
+  background: #f41497;
+  color: #fff;
+  width: 75%;
+  height: 50px;
+  padding: 4px;
+  text-transform: uppercase;
+  z-index: 129;
+}
+.Form button:hover,
+.Form button:active,
+.Form button.active,
+.SignInForm button:hover,
+.SignInForm button:active,
+.SignInForm button.active,
+.SignUpForm button:hover,
+.SignUpForm button:active,
+.SignUpForm button.active {
+  color: #fff;
+}

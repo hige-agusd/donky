@@ -8,7 +8,7 @@ const sumate = props => (
         <div className={'Sumate-wrapper'}>
             <div className={'Sumate-titulo'} >SUMATE AL EQUIPO</div>
             <div className={'Sumate-subtitulo'} >NO TE QUEDES SIN JUGAR</div>
-            <NavLink to={'/contacto'} className={'Sumate-btn Sumate-contacto-btn'} >CONTACTO</NavLink>
+            {/* <NavLink to={'/contacto'} className={'Sumate-btn Sumate-contacto-btn'} >CONTACTO</NavLink> */}
         </div>
     </Container>
 );

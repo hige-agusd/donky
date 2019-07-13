@@ -44,7 +44,6 @@ class adminNewStaff extends Component {
     }
 
     render() {
-        console.log(this.props.index);
         return (
             <Row className={`Partido-wrapper NewStaff-row ${this.props.even}`} >
                 <div className={"  NewStaff-row-label"}>

@@ -1,0 +1,16 @@
+.SignOut.btn {
+    /* background: #f41497; */
+    border-radius: 12px;
+    background: #f41497;
+    color: #fff;
+    width: 119px;
+    height: 30px;
+    padding: 4px;
+    text-transform: uppercase;
+    z-index: 129;
+}
+.SignOut:hover.btn ,
+.SignOut:active.btn ,
+.SignOut.active.btn {
+    color: #fff;
+}

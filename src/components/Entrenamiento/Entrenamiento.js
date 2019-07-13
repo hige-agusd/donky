@@ -4,7 +4,6 @@ import './Entrenamiento.css';
 import Stats from "../Stats/Stats";
 
 const entrenamiento = props => {
-    console.log(props.stats)
     const jugador = props.jugador ? 
         <>
             <FichaJugador ficha={props.jugador} />

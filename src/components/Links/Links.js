@@ -12,7 +12,6 @@ const links = props => (
     <Row className={'Links-row'}>
       <Col className={'col-xs-12 Links-col'} md={4}><Link link={'/fixture'} image={fixture} label={'Fixture'}/></Col>
       <Col className={'col-xs-12 Links-col'} md={4}><Link link={'/entrenamiento'} image={entrenamiento} label={'Entrenamiento'}/></Col>
-      <Col className={'col-xs-12 Links-col'} md={4}><Link link={'/sumate'} image={sumate} label={'Sumate'}/></Col>
     </Row>
   </Container>
 );

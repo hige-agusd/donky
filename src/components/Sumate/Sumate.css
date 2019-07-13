@@ -54,6 +54,12 @@
    .Sumate {
      height: 300px;
    }
+   .Sumate-titulo {
+        font-size: 30px;
+    }
+    .Sumate-subtitulo {
+        font-size: 22px;
+    }
 }
 @media (min-width: 1024px) {
     

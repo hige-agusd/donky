@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from "react-router-dom";
 import { compose } from 'recompose';
 
 import { SignUpLink } from '../SignUp';
@@ -8,8 +8,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
+  <div className={`SignInForm`}>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
@@ -36,7 +35,9 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        if (this.props.history.location.pathname === ROUTES.SIGN_IN) {
+          this.props.history.push(ROUTES.HOME);
+        }
       })
       .catch(error => {
         this.setState({ error });
@@ -55,23 +56,23 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className={'SignInForm'}>
         <input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="email"
         />
         <input
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
+          placeholder="contraseña"
         />
         <button disabled={isInvalid} type="submit">
-          Sign In
+          Log in
         </button>
 
         {error && <p>{error.message}</p>}
@@ -80,6 +81,12 @@ class SignInFormBase extends Component {
   }
 }
 
+const SignInLink = () => (
+  <p>
+    ¿Ya tenés cuenta? <Link to={ROUTES.SIGN_IN}>Ingresá acá</Link>
+  </p>
+);
+
 const SignInForm = compose(
   withRouter,
   withFirebase,
@@ -87,4 +94,4 @@ const SignInForm = compose(
 
 export default SignInPage;
 
-export { SignInForm };
+export { SignInForm, SignInLink };

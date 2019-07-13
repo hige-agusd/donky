@@ -1,4 +1,10 @@
 .VerifyEmail {
+    background: #fff;
+    color: #333;
     height: 300px;
     width: 100%;
+}
+.VerifyEmail span {
+    color: #f41497;
+    text-transform: uppercase;
 }

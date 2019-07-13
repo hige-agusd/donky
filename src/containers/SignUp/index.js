@@ -2,21 +2,19 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose";
 
+import { SignInLink } from '../SignIn';
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 
-import './SignUp.css';
-
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <div className={`SignUpForm`}>
     <SignUpForm />
+    <SignInLink />
   </div>
 );
 
 const INITIAL_STATE = {
-  nro_socio: false,
   username: "",
   email: "",
   passwordOne: "",
@@ -32,7 +30,7 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { nro_socio, username, email, passwordOne, isAdmin } = this.state;
+    const { username, email, passwordOne, isAdmin } = this.state;
     const roles = {};
 
     if (isAdmin) {
@@ -44,7 +42,6 @@ class SignUpFormBase extends Component {
       .then(authUser => {
         // Create a user in your Firebase realtime database
         return this.props.firebase.user(authUser.user.uid).set({
-          nro_socio,
           username,
           email,
           roles
@@ -71,7 +68,6 @@ class SignUpFormBase extends Component {
 
   render() {
     const {
-      nro_socio,
       username,
       email,
       passwordOne,
@@ -84,8 +80,7 @@ class SignUpFormBase extends Component {
       passwordOne !== passwordTwo ||
       passwordOne === "" ||
       email === "" ||
-      username === "" ||
-      !nro_socio;
+      username === "";
 
     return (
       <form onSubmit={this.onSubmit} className={'SignUpForm'}>
@@ -94,37 +89,30 @@ class SignUpFormBase extends Component {
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Nombre completo"
+          placeholder="nombre completo"
         />
         <input
           name="email"
           value={email}
           onChange={this.onChange}
           type="email"
-          placeholder="Email"
-        />
-        <input
-          name="nro_socio"
-          value={nro_socio}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Número de socio"
+          placeholder="email"
         />
         <input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
-          placeholder="Contraseña"
+          placeholder="contraseña"
         />
         <input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
-          placeholder="Confirmar contraseña"
+          placeholder="confirmar contraseña"
         />
-        <label>
+        {/* <label>
           Admin:
           <input
             name="isAdmin"
@@ -132,9 +120,9 @@ class SignUpFormBase extends Component {
             checked={isAdmin}
             onChange={this.onChangeCheckbox}
           />
-        </label>
+        </label> */}
         <button disabled={isInvalid} type="submit">
-          Sign Up
+          Crear Cuenta
         </button>
 
         {error && <p>{error.message}</p>}
@@ -145,7 +133,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    ¿No tenés cuenta? <Link to={ROUTES.SIGN_UP}>Registrate</Link>
   </p>
 );
 
